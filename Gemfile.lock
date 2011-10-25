@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    triphthong (0.0.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    minitest (2.6.2)
+    rake (0.9.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (>= 2.3)
+  rake
+  triphthong!
