@@ -7,6 +7,8 @@ To do
 -----
 
 * actually count syllables (in Polish for starters)
+* Triphthong.count_syllables: drop 19th century edge cases
+* Triphthong.count_syllables: drop Latin edge cases
 
 ---
 
