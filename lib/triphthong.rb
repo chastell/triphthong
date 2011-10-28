@@ -11,7 +11,7 @@ module Triphthong
         3
       when 'Akademii', 'kokieterii', 'paulinowie', 'Tyzenhauzem'
         4
-      else word.scan(/^au|a|à|ą|e(?!y)|é|ę|o|ó|Ó|u|y|i(?![aąeéęoóu])/i).size
+      else word.scan(/^au|a|à|ą|æ|e(?!y)|é|ę|o|ó|Ó|u|y|i(?![aąeéęoóu])/i).size
       end
     end.inject :+
   end
