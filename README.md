@@ -1,14 +1,22 @@
 Triphthong
 ==========
 
-Triphthong is a (quite useless for now) syllable counter.
+Triphthong is a (currently, Polish-only) syllable counter.
+
+Usage
+-----
+
+``` Ruby
+require 'triphthong'
+Triphthong.count_syllables 'Litwo! Ojczyzno moja!'   #=> 7
+```
 
 To do
 -----
 
-* actually count syllables (in Polish for starters)
-* Triphthong.count_syllables: drop 19th century edge cases
-* Triphthong.count_syllables: drop Latin edge cases
+* better edge case handling
+* add syllable splitter?
+* add support for other languages
 
 ---
 
