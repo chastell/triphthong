@@ -4,9 +4,9 @@ require_relative 'spec_helper'
 
 describe Triphthong do
 
-  describe '.count_syllables' do
+  describe '#syllable_count' do
 
-    it 'returns the number of syllables in the given String' do
+    it 'returns the number of syllables' do
       skip_lines = [
         '',
         'Bogacz i familiant, miał jedyne dziecię,',
@@ -45,7 +45,7 @@ describe Triphthong do
       ]
       File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
         next if skip_lines.include? line
-        Triphthong.count_syllables(line).must_equal 13, "not 13 syllables in ‘#{line}’"
+        Triphthong.new(line).syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
       end
     end
 

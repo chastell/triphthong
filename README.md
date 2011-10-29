@@ -8,7 +8,7 @@ Usage
 
 ``` Ruby
 require 'triphthong'
-Triphthong.count_syllables 'Litwo! Ojczyzno moja!'   #=> 7
+Triphthong.new('Litwo! Ojczyzno moja!').syllable_count   #=> 7
 ```
 
 To do
