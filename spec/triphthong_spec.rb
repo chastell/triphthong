@@ -49,6 +49,11 @@ describe Triphthong do
       end
     end
 
+    it 'handles edge cases' do
+      line = 'Żebym mógł iść do loży Müllerów, tobym wyszedł.'
+      Triphthong.new(line).syllable_count.must_equal 14, "not 14 syllables in ‘#{line}’"
+    end
+
   end
 
   describe '#syllables' do
