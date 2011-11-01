@@ -21,6 +21,7 @@ To do
 * better edge case handling
 * make syllable splitter split into actual syllables
 * add support for other languages
+* add Beniowski to fixtures
 
 ---
 
