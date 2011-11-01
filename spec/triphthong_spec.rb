@@ -16,35 +16,10 @@ describe Triphthong do
         'Jako zaklęte w górach kaukaskich jeziora',
         'I harmonią cudną orkiestry podwodnej,',
         'Słowem, cum gais, boris et graniciebus,',
-        'I często zarywał się:',
-        'W duszy mojej!…',
-        'Ale i on…',
-        'O procesach, sejmikach, łowach…',
-        'Jak gdybym Sanktissimum ujrzał!',
-        'Gdyby wiedziano, że ja Jacek…',
-        'Jak ślimak rogów!',
-        'Nie mogłem, nie.',
-        'Pomścić się…',
-        'Zacząłem pić.',
-        'Popełniłem…',
-        'Nawet Stolnika…',
-        'Wiesz!…',
-        'Chwila, jedna iskierka…',
-        'Przecież nie byłem zdrajcą kraju.',
-        'Wiedziałem to, a przecież — nie mogłem.',
-        'Uciekłem z kraju!…',
-        'Gdziem nie był! com nie cierpiał!…',
-        'Ile możności to…',
-        'Kazałem ją hodować…',
-        'Że jako robak w prochu…',
-        'Krwią, poświęceniem się…',
-        'I cierpienia, których nikt…',
-        'Z sakramentami…',
-        'Ta myśl… zdaje się czysta…',
         'Dobył z kieszeni portefeuille z plikami papierów,',
       ]
       File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
-        next if skip_lines.include? line
+        next if skip_lines.include? line or line.start_with? ' '
         Triphthong.new(line).syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
       end
     end
