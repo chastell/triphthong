@@ -22,8 +22,11 @@ describe Triphthong do
     end
 
     it 'handles edge cases' do
-      line = 'Żebym mógł iść do loży Müllerów, tobym wyszedł.'
-      Triphthong.new(line).syllable_count.must_equal 14, "not 14 syllables in ‘#{line}’"
+      {
+        'Müller' => 2,
+      }.each do |word, count|
+        Triphthong.new(word).syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
+      end
     end
 
   end
