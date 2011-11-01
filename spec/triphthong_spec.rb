@@ -9,12 +9,9 @@ describe Triphthong do
     it 'returns the number of syllables' do
       skip_lines = [
         '',
-        'Bogacz i familiant, miał jedyne dziecię,',
         'Czy żyje wielki Baublis, w którego ogromie',
-        'Więc spolia opima weźmiesz, mości Hrabia:',
         'A wyuczyłem śpiewać fein moje bachurki».',
         'Jako zaklęte w górach kaukaskich jeziora',
-        'I harmonią cudną orkiestry podwodnej,',
         'Słowem, cum gais, boris et graniciebus,',
         'Dobył z kieszeni portefeuille z plikami papierów,',
       ]
