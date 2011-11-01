@@ -2,7 +2,12 @@
 
 class Triphthong
 
-  SyllableVowels = /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)|a|à|ą|æ|e(?!u[dt]|y)|é|ę|o|ó|Ó|u|ü|y|i(?![aąioóu]|[eéę](?!nt))/
+  SyllableVowels = Regexp.union [
+    /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
+    /e(?!u[dt]|y)/,
+    /i(?![aąioóu]|[eéę](?!nt))/,
+    /a|à|ą|æ|é|ę|o|ó|Ó|u|ü|y/,
+  ]
 
   def initialize text
     @text = text.downcase.gsub /[^\p{L} ]/, ''
