@@ -2,10 +2,10 @@
 
 class Triphthong
 
-  SyllableVowels = /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)|a|à|ą|æ|e(?!u[dt]|y)|é|ę|o|ó|Ó|u|ü|y|i(?![aąioóu]|[eéę](?!nt))/i
+  SyllableVowels = /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)|a|à|ą|æ|e(?!u[dt]|y)|é|ę|o|ó|Ó|u|ü|y|i(?![aąioóu]|[eéę](?!nt))/
 
   def initialize text
-    @text = text
+    @text = text.downcase.gsub /[^\p{L} ]/, ''
   end
 
   def syllable_count
@@ -13,9 +13,8 @@ class Triphthong
   end
 
   def syllables
-    text  = @text.downcase.split(//).grep(/[\p{L} ]/).join
-    split = text.split SyllableVowels
-    scan  = text.scan  SyllableVowels
+    split = @text.split SyllableVowels
+    scan  = @text.scan  SyllableVowels
 
     syls = []
     syls << "#{split.shift}#{scan.shift}".strip until split.empty? && scan.empty?
