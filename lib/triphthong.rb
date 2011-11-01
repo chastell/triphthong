@@ -4,14 +4,17 @@ require 'unicode'
 
 class Triphthong
 
+  NonEIYVovel = /a|à|ą|æ|é|ę|o|ó|u|ü/
+
   SyllableVowel = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
     /(?<!ni|s)eu(?!cz|l|m$|sz|tr)/,
+    /e/,
     /ii\b/,
+    /i(?!e(?!nt)|#{NonEIYVovel})/,
     /qui/,
-    /e(?!y)/,
-    /i(?![aąéęoóu]|e(?!nt))/,
-    /a|à|ą|æ|é|ę|o|ó|u|ü|y/,
+    /(?<!e)y/,
+    NonEIYVovel,
   ]
 
   def initialize text
