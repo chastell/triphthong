@@ -9,7 +9,6 @@ describe Triphthong do
     it 'returns the number of syllables' do
       skip_lines = [
         '',
-        'Czy żyje wielki Baublis, w którego ogromie',
         'A wyuczyłem śpiewać fein moje bachurki».',
         'Jako zaklęte w górach kaukaskich jeziora',
         'Słowem, cum gais, boris et graniciebus,',
@@ -23,7 +22,11 @@ describe Triphthong do
 
     it 'handles edge cases' do
       {
-        'Müller' => 2,
+        'Müller'      => 2,
+        'inauguracja' => 5,
+        'niezaułkowy' => 5,
+        'paranauka'   => 5,
+        'zaułek'      => 3,
       }.each do |word, count|
         Triphthong.new(word).syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
       end

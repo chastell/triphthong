@@ -2,7 +2,7 @@
 
 class Triphthong
 
-  SyllableVowels = /\bau|a(?!u[flz])|à|ą|æ|e(?!u[dt]|y)|é|ę|o|ó|Ó|u|ü|y|i(?![aąioóu]|[eéę](?!nt))/i
+  SyllableVowels = /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)|a|à|ą|æ|e(?!u[dt]|y)|é|ę|o|ó|Ó|u|ü|y|i(?![aąioóu]|[eéę](?!nt))/i
 
   def initialize text
     @text = text
