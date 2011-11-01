@@ -21,7 +21,6 @@ To do
 * better edge case handling
 * make syllable splitter split into actual syllables
 * add support for other languages
-* use unicode or unicode_utils gem for {down,up}casing
 
 ---
 
