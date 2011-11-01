@@ -25,6 +25,7 @@ describe Triphthong do
         'Müller' => 2,
         'Odyseusz' => 4, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4, 'nieustraszony' => 5, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'trofeum' => 3,
         'inauguracja' => 5, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3,
+        'quiz' => 1,
       }.each do |word, count|
         Triphthong.new(word).syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
       end

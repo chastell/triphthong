@@ -5,8 +5,10 @@ class Triphthong
   SyllableVowels = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
     /(?<!ni|s)eu(?!cz|l|m$|sz|tr)/,
+    /ii\b/,
+    /qui/,
     /e(?!y)/,
-    /i(?![aąioóu]|[eéę](?!nt))/,
+    /i(?![aąéęoóu]|e(?!nt))/,
     /a|à|ą|æ|é|ę|o|ó|Ó|u|ü|y/,
   ]
 
