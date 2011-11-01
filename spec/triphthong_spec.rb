@@ -22,7 +22,7 @@ describe Triphthong do
 
     it 'handles edge cases' do
       {
-        'Müller' => 2,
+        'Müller' => 2, 'Raphaël' => 3, 'Störch' => 1, 'Vorwärts' => 2,
         'Odyseusz' => 4, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4, 'nieustraszony' => 5, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'trofeum' => 3,
         'inauguracja' => 5, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3,
         'quiz' => 1,

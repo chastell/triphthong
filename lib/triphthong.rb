@@ -4,7 +4,7 @@ require 'unicode'
 
 class Triphthong
 
-  NonEIYVovel = /a|à|ą|æ|é|ę|o|ó|u|ü/
+  NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|u|ü/
 
   SyllableVowel = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
