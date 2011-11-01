@@ -8,7 +8,7 @@ class Triphthong
 
   SyllableVowel = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
-    /(?<!ni|s)eu(?!cz|l|m$|sz|tr)/,
+    /(?<!ni|s)eu(?!cz|l|m\b|sz|tr)/,
     /e/,
     /ii\b/,
     /i(?!e(?!nt)|#{NonEIYVovel})/,

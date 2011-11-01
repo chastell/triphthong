@@ -27,7 +27,7 @@ describe Triphthong do
         'inauguracja' => 5, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3,
         'quiz' => 1,
       }.each do |word, count|
-        Triphthong.new(word).syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
+        Triphthong.new("z #{word} z").syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
       end
     end
 
