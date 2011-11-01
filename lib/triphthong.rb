@@ -4,7 +4,7 @@ require 'unicode'
 
 class Triphthong
 
-  SyllableVowels = Regexp.union [
+  SyllableVowel = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
     /(?<!ni|s)eu(?!cz|l|m$|sz|tr)/,
     /ii\b/,
@@ -19,16 +19,16 @@ class Triphthong
   end
 
   def syllable_count
-    @text.scan(SyllableVowels).size
+    @text.scan(SyllableVowel).size
   end
 
   def syllables
-    split = @text.split SyllableVowels
-    scan  = @text.scan  SyllableVowels
+    split = @text.split SyllableVowel
+    scan  = @text.scan  SyllableVowel
 
     syls = []
     syls << "#{split.shift}#{scan.shift}".strip until split.empty? && scan.empty?
-    syls[syls.size - 2] << syls.pop unless syls.last =~ SyllableVowels
+    syls[syls.size - 2] << syls.pop unless syls.last =~ SyllableVowel
 
     syls
   end
