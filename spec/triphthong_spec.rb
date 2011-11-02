@@ -4,6 +4,16 @@ require_relative 'spec_helper'
 
 describe Triphthong do
 
+  describe '#rhyme_pattern' do
+
+    it 'returns the rhyme pattern' do
+      Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').rhyme_pattern.must_equal 'owie'
+      Triphthong.new('Nowogródzki ochraniasz z jego wiernym ludem!').rhyme_pattern.must_equal 'udem'
+      Triphthong.new('Bo je zbliżała dzieciom do ust po kolei;').rhyme_pattern.must_equal     'ei'
+    end
+
+  end
+
   describe '#syllable_count' do
 
     it 'returns the number of syllables' do

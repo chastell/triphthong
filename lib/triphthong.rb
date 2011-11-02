@@ -22,6 +22,10 @@ class Triphthong
     @text = Unicode.downcase(text).gsub /[^\p{L} ]/, ''
   end
 
+  def rhyme_pattern
+    @text[@text.rindex(SyllableVowel, @text.rindex(SyllableVowel) - 1)..-1]
+  end
+
   def syllable_count
     @text.scan(SyllableVowel).size
   end
