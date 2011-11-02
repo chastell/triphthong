@@ -26,15 +26,4 @@ class Triphthong
     @text.scan(SyllableVowel).size
   end
 
-  def syllables
-    split = @text.split SyllableVowel
-    scan  = @text.scan  SyllableVowel
-
-    syls = []
-    syls << "#{split.shift}#{scan.shift}".strip until split.empty? && scan.empty?
-    syls[syls.size - 2] << syls.pop unless syls.last =~ SyllableVowel
-
-    syls
-  end
-
 end
