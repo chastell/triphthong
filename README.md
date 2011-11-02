@@ -22,6 +22,7 @@ To do
 * make syllable splitter split into actual syllables
 * add support for other languages
 * add Beniowski to fixtures
+* improve #rhyme_pattern to pass Pan Tadeusz test (see spec)
 
 ---
 

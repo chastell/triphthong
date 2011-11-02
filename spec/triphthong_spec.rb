@@ -12,6 +12,13 @@ describe Triphthong do
       Triphthong.new('Bo je zbliżała dzieciom do ust po kolei;').rhyme_pattern.must_equal     'ei'
     end
 
+    it 'works with Pan Tadeusz rhymes' do
+      skip
+      File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).reject(&:empty?).each_slice 2 do |a, b|
+        Triphthong.new(a).rhyme_pattern.must_equal Triphthong.new(b).rhyme_pattern, "rhyme mismatch between ‘#{a}’ and ‘#{b}’"
+      end
+    end
+
   end
 
   describe '#syllable_count' do
