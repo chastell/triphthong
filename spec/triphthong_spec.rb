@@ -4,6 +4,20 @@ require_relative 'spec_helper'
 
 describe Triphthong do
 
+  describe '#has_caesura_after?' do
+
+    it 'returns a Boolean on whether the given String has a cæsura after the given syllable' do
+      refute Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 6
+      assert Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 7
+      refute Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 9
+      refute Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 12
+      assert Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 13
+      refute Triphthong.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_caesura_after? 14
+      assert Triphthong.new('Podług niej później Karol-Kochanku-Radziwiłł').has_caesura_after? 7
+    end
+
+  end
+
   describe '#rhyme_pattern' do
 
     it 'returns the rhyme pattern' do

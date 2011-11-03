@@ -19,7 +19,14 @@ class Triphthong
   ]
 
   def initialize text
-    @text = Unicode.downcase(text).gsub /[^\p{L} ]/, ''
+    @text = Unicode.downcase(text).gsub /[^\p{L} -]/, ''
+  end
+
+  def has_caesura_after? number
+    counts = @text.split(/\P{L}/).map { |word| Triphthong.new(word).syllable_count }
+    sum = 0
+    sum += counts.shift while sum < number and counts.any?
+    sum == number
   end
 
   def rhyme_pattern
