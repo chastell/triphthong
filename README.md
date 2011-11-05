@@ -9,10 +9,11 @@ Usage
 ``` Ruby
 require 'triphthong'
 
-text = Triphthong.new 'Litwo! Ojczyzno moja!'
+text = Triphthong::Verse.new 'Litwo! Ojczyzno moja!'
 
-text.syllable_count   #=> 7
-text.syllables        #=> ['li', 'two', 'o', 'jczy', 'zno', 'mo', 'ja']
+text.syllable_count         #=> 7
+text.has_caesura_after? 7   #=> true
+text.rhyme_pattern          #=> 'oja'
 ```
 
 To do
