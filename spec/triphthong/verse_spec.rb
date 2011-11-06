@@ -14,6 +14,20 @@ module Triphthong describe Verse do
       refute verse.has_caesura_after? 14
       assert 'Podług niej później Karol-Kochanku-Radziwiłł'.extend(Verse).has_caesura_after? 7
     end
+
+    it 'works with Pan Tadeusz cæsuræ' do
+      blacklist = [
+        'Nagą łodygę szarozielonawej trawy.',
+        'Potem, z siedemset dziewięćdziesiąt czwartym rokiem',
+        'Śpieszyłem znowu jak najzimniej dyskurować',
+        'Zawsze ich zbił; więc ilekroć do zamku biegał,',
+        'Dobył z kieszeni portefeuille z plikami papierów,',
+      ]
+      File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
+        next if line.empty? or line.start_with? ' ' or blacklist.include? line
+        assert line.extend(Verse).has_caesura_after?(7), "no cæsura after 7th syllable in ‘#{line}’"
+      end
+    end
   end
 
   describe '#rhyme_pattern' do
