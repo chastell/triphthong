@@ -29,13 +29,6 @@ module Triphthong describe Verse do
       'Nowogródzki ochraniasz z jego wiernym ludem!'.extend(Verse).rhyme_pattern.must_equal 'udem'
       'Bo je zbliżała dzieciom do ust po kolei;'.extend(Verse).rhyme_pattern.must_equal     'ei'
     end
-
-    it 'works with Pan Tadeusz rhymes' do
-      skip
-      File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).reject(&:empty?).each_slice 2 do |a, b|
-        a.extend(Verse).rhyme_pattern.must_equal b.extend(Verse).rhyme_pattern, "rhyme mismatch between ‘#{a}’ and ‘#{b}’"
-      end
-    end
   end
 
   describe '#syllable_count' do
