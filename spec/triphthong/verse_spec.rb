@@ -16,15 +16,8 @@ module Triphthong describe Verse do
     end
 
     it 'works with Pan Tadeusz cæsuræ' do
-      blacklist = [
-        'Nagą łodygę szarozielonawej trawy.',
-        'Potem, z siedemset dziewięćdziesiąt czwartym rokiem',
-        'Śpieszyłem znowu jak najzimniej dyskurować',
-        'Zawsze ich zbił; więc ilekroć do zamku biegał,',
-        'Dobył z kieszeni portefeuille z plikami papierów,',
-      ]
       File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
-        next if line.empty? or line.start_with? ' ' or blacklist.include? line
+        next if line.empty? or line.start_with? ' '
         assert line.extend(Verse).has_caesura_after?(7), "no cæsura after 7th syllable in ‘#{line}’"
       end
     end
@@ -47,9 +40,8 @@ module Triphthong describe Verse do
 
   describe '#syllable_count' do
     it 'returns the number of syllables' do
-      blacklist = ['fein', 'graniciebus', 'portefeuille'].map { |word| /\b#{Regexp.quote word}\b/i }
       File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
-        next if line.empty? or line.start_with? ' ' or blacklist.any? { |match| line =~ match }
+        next if line.empty? or line.start_with? ' '
         line.extend(Verse).syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
       end
     end
