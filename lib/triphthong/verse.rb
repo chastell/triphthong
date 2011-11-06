@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Triphthong class Verse
+module Triphthong module Verse
   NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|u|ü/
 
   SyllableVowel = Regexp.union [
@@ -15,22 +15,24 @@ module Triphthong class Verse
     NonEIYVovel,
   ]
 
-  def initialize text
-    @text = Unicode.downcase(text).gsub /[^\p{L} -]/, ''
-  end
-
   def has_caesura_after? number
-    counts = @text.split(/\P{L}/).map { |word| Verse.new(word).syllable_count }
+    counts = verse_text.split(/\P{L}/).map { |word| word.extend(Verse).syllable_count }
     sum = 0
     sum += counts.shift while sum < number and counts.any?
     sum == number
   end
 
   def rhyme_pattern
-    @text[@text.rindex(SyllableVowel, @text.rindex(SyllableVowel) - 1)..-1]
+    verse_text[verse_text.rindex(SyllableVowel, verse_text.rindex(SyllableVowel) - 1)..-1]
   end
 
   def syllable_count
-    @text.scan(SyllableVowel).size
+    verse_text.scan(SyllableVowel).size
+  end
+
+  private
+
+  def verse_text
+    @verse_text ||= Unicode.downcase(self).gsub /[^\p{L} -]/, ''
   end
 end end
