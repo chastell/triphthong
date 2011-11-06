@@ -3,6 +3,12 @@
 require_relative '../spec_helper'
 
 module Triphthong describe Verse do
+  def pan_tadeusz_lines
+    @pan_tadeusz_lines ||= File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).reject do |line|
+      line.empty? or line.start_with? ' '
+    end.map { |line| line.extend Verse }
+  end
+
   describe '#has_caesura_after?' do
     it 'returns a Boolean on whether the given String has a cæsura after the given syllable' do
       verse = 'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend Verse
@@ -16,9 +22,8 @@ module Triphthong describe Verse do
     end
 
     it 'works with Pan Tadeusz cæsuræ' do
-      File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
-        next if line.empty? or line.start_with? ' '
-        assert line.extend(Verse).has_caesura_after?(7), "no cæsura after 7th syllable in ‘#{line}’"
+      pan_tadeusz_lines.each do |line|
+        assert line.has_caesura_after?(7), "no cæsura after 7th syllable in ‘#{line}’"
       end
     end
   end
@@ -33,9 +38,12 @@ module Triphthong describe Verse do
 
   describe '#syllable_count' do
     it 'returns the number of syllables' do
-      File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).each do |line|
-        next if line.empty? or line.start_with? ' '
-        line.extend(Verse).syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
+      'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend(Verse).syllable_count.must_equal 13
+    end
+
+    it 'works with Pan Tadusz verses' do
+      pan_tadeusz_lines.each do |line|
+        line.syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
       end
     end
 
