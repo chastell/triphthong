@@ -6,7 +6,8 @@ module Triphthong module Verse
   SyllableVowel = Regexp.union [
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
     /(?<=k)au(?=cz|k)/,
-    /(?<!ni|s)eu(?!cz|l|m\b|sz|tr)/,
+    /\beu(?=g)/,
+    /(?<!ni|s|\P{L})eu(?!cz|l|m\b|sz|tr)/,
     /e/,
     /ii\b/,
     /i(?!e(?!nt)|#{NonEIYVovel})/,
