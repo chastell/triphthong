@@ -3,12 +3,6 @@
 require_relative '../spec_helper'
 
 module Triphthong describe Verse do
-  def pan_tadeusz_lines
-    @pan_tadeusz_lines ||= File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).reject do |line|
-      line.empty? or line.start_with? ' '
-    end.map { |line| line.extend Verse }
-  end
-
   describe '#has_caesura_after?' do
     it 'returns a Boolean on whether the given String has a cæsura after the given syllable' do
       verse = 'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend Verse
@@ -19,12 +13,6 @@ module Triphthong describe Verse do
       assert verse.has_caesura_after? 13
       refute verse.has_caesura_after? 14
       assert 'Podług niej później Karol-Kochanku-Radziwiłł'.extend(Verse).has_caesura_after? 7
-    end
-
-    it 'works with Pan Tadeusz cæsuræ' do
-      pan_tadeusz_lines.each do |line|
-        assert line.has_caesura_after?(7), "no cæsura after 7th syllable in ‘#{line}’"
-      end
     end
   end
 
@@ -39,12 +27,6 @@ module Triphthong describe Verse do
   describe '#syllable_count' do
     it 'returns the number of syllables' do
       'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend(Verse).syllable_count.must_equal 13
-    end
-
-    it 'works with Pan Tadusz verses' do
-      pan_tadeusz_lines.each do |line|
-        line.syllable_count.must_equal 13, "not 13 syllables in ‘#{line}’"
-      end
     end
 
     it 'handles edge cases' do
