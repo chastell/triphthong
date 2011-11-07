@@ -24,6 +24,7 @@ To do
 * add support for other languages
 * add Beniowski to fixtures
 * improve #rhyme_pattern to pass Pan Tadeusz test
+* handle laur/laurka/laurowy syllable counts
 
 ---
 

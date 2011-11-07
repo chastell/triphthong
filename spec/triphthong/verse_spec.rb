@@ -33,7 +33,7 @@ module Triphthong describe Verse do
       {
         'Müller' => 2, 'Raphaël' => 3, 'Störch' => 1, 'Vorwärts' => 2,
         'Eugeniusz' => 3, 'Europa' => 4, 'Odyseusz' => 4, 'eunuch' => 3, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4, 'nieustraszony' => 5, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'trofeum' => 3,
-        'inauguracja' => 5, 'kauczuk' => 2, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3,
+        'auto' => 2, 'inauguracja' => 5, 'kauczuk' => 2, 'naubijać' => 4, 'naubliżać' => 4, 'nauczanie' => 4, 'nauczka' => 3, 'nauka' => 3, 'nausznik' => 3, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3, 'zauroczenie' => 5,
         'quiz' => 1,
       }.each do |word, count|
         "z #{word} z".extend(Verse).syllable_count.must_equal count, "not #{count} syllables in ‘#{word}’"
