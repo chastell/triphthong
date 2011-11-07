@@ -22,7 +22,7 @@ To do
 * better edge case handling
 * make syllable splitter split into actual syllables
 * add support for other languages
-* add Beniowski to fixtures
+* add Balladyna, Beniowski, Monacho- and Antymonachomachia to fixtures
 * improve #rhyme_pattern to pass Pan Tadeusz test
 * handle laur/laurka/laurowy syllable counts
 
