@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.test_files  = `git ls-files -z -- spec/*`.split "\0"
 
   gem.add_dependency 'srx-polish'
+  gem.add_dependency 'trollop'
   gem.add_dependency 'unicode'
   gem.add_development_dependency 'minitest', '>= 2.3'
   gem.add_development_dependency 'rake'
