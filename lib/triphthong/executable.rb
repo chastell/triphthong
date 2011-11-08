@@ -16,7 +16,6 @@ module Triphthong class Executable
       @args.each do |src|
         File.open "#{@opts[:datadir]}/#{File.basename src}", 'w' do |dest|
           File.read(src).extend(Text).sentences.each do |sentence|
-            sentence.extend Verse
             next if @opts[:caesura_given]   and not sentence.has_caesura_after? @opts[:caesura]
             next if @opts[:syllables_given] and sentence.syllable_count != @opts[:syllables]
             dest.puts sentence

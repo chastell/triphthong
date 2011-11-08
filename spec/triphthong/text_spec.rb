@@ -12,6 +12,10 @@ module Triphthong describe Text do
       @text.sentences.must_be_instance_of Enumerator
     end
 
+    it 'yields Verse-extended objects' do
+      @text.sentences.each { |s| s.must_be_kind_of Verse }
+    end
+
     it 'yields consecutive stentences from the given text' do
       @text.sentences.to_a.must_equal [
         'Litwo!',
