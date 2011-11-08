@@ -1,9 +1,13 @@
 # encoding: UTF-8
 
 module Triphthong module Verse
-  NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|u|ü/
+  NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
 
   SyllableVowel = Regexp.union [
+    /(?<=et)a(?=i)/,
+    /(?<=t)ai(?=n)/,
+    /(?<!el|ni)eau/,
+    /(?<=n)ou(?=v)/,
     /(?<!^[nz]|\P{L}[nz])au(?!cz|ł|k)/,
     /(?<=k)au(?=cz|k)/,
     /e(?=usz)/,
@@ -15,6 +19,7 @@ module Triphthong module Verse
     /(?<=s)e(?=ul)/,
     /eu/,
     /e/,
+    /(?<=v)ou(?=s)/,
     /ii\b/,
     /i(?!e(?!nt)|#{NonEIYVovel})/,
     /qui/,
