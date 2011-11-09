@@ -24,6 +24,19 @@ module Triphthong describe Verse do
     end
   end
 
+  describe '#rhymes_with?' do
+    it 'is a predicate whether two Verses rhyme' do
+      assert Verse.new('wyjaśnienie').rhymes_with? Verse.new 'wyżółcenie'
+      refute Verse.new('siejąc ferment').rhymes_with? Verse.new 'niczym Reymont'
+    end
+
+    it 'rejects rhymes based on repetition' do
+      refute Verse.new('Panowie').rhymes_with? Verse.new 'panowie'
+      refute Verse.new('nie odjechał!').rhymes_with? Verse.new 'z nami jechał.'
+      refute Verse.new('z nami jechał.').rhymes_with? Verse.new 'nie odjechał!'
+    end
+  end
+
   describe '#source' do
     it 'returns the source of the Verse' do
       Verse.new('Litwo! Ojczyzno moja!', 'Pan Tadeusz').source.must_equal 'Pan Tadeusz'

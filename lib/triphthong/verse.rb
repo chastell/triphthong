@@ -42,6 +42,14 @@ module Triphthong class Verse < Struct.new :text, :source
     normalised[normalised.rindex(SyllableVowel, normalised.rindex(SyllableVowel) - 1)..-1]
   end
 
+  def rhymes_with? other
+    return false if rhyme_pattern != other.rhyme_pattern
+    return false if words.last == other.words.last
+    return false if words.last.end_with? other.words.last
+    return false if other.words.last.end_with? words.last
+    true
+  end
+
   def syllable_count
     normalised.scan(SyllableVowel).size
   end
