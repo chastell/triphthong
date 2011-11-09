@@ -19,12 +19,12 @@ text.rhyme_pattern          #=> 'oja'
 To do
 -----
 
-* better edge case handling
-* make syllable splitter split into actual syllables
-* add support for other languages
-* add Balladyna, Beniowski, Monacho- and Antymonachomachia to fixtures
 * improve #rhyme_pattern to pass Pan Tadeusz test
+* add Balladyna, Beniowski, Monacho- and Antymonachomachia to fixtures
 * handle laur/laurka/laurowy syllable counts
+* update README with executable usage examples
+* add syllable splitter
+* support for other languages
 
 ---
 
