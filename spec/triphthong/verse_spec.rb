@@ -24,6 +24,12 @@ module Triphthong describe Verse do
     end
   end
 
+  describe '#source' do
+    it 'returns the source of the Verse' do
+      Verse.new('Litwo! Ojczyzno moja!', 'Pan Tadeusz').source.must_equal 'Pan Tadeusz'
+    end
+  end
+
   describe '#syllable_count' do
     it 'returns the number of syllables' do
       Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').syllable_count.must_equal 13

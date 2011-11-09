@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Triphthong class Verse < Struct.new :text
+module Triphthong class Verse < Struct.new :text, :source
   NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
 
   SyllableVowel = Regexp.union [
