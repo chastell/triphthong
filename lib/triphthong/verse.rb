@@ -4,6 +4,7 @@ module Triphthong class Verse < Struct.new :text, :source
   NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
 
   SyllableVowel = Regexp.union [
+    /foi\b/,
     /ae(?=q|re)/,
     /ae\b/,
     /(?<=q)uo/,
@@ -26,7 +27,7 @@ module Triphthong class Verse < Struct.new :text, :source
     /ii\b/,
     /i(?!e(?!nt)|#{NonEIYVovel})/,
     /qui/,
-    /(?<!e)y/,
+    /(?<!e|o)y/,
     NonEIYVovel,
   ]
 
