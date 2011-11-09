@@ -45,9 +45,7 @@ module Triphthong class Verse < Struct.new :text, :source
     normalised.scan(SyllableVowel).size
   end
 
-  def to_s
-    text
-  end
+  alias to_s text
 
   private
 
