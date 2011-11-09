@@ -9,7 +9,7 @@ Usage
 ``` Ruby
 require 'triphthong'
 
-text = 'Litwo! Ojczyzno moja!'.extend Triphthong::Verse
+text = Verse.new 'Litwo! Ojczyzno moja!'
 
 text.syllable_count         #=> 7
 text.has_caesura_after? 7   #=> true

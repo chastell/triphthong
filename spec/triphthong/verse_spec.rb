@@ -5,28 +5,28 @@ require_relative '../spec_helper'
 module Triphthong describe Verse do
   describe '#has_caesura_after?' do
     it 'returns a Boolean on whether the given String has a cæsura after the given syllable' do
-      verse = 'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend Verse
+      verse = Verse.new 'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'
       refute verse.has_caesura_after? 6
       assert verse.has_caesura_after? 7
       refute verse.has_caesura_after? 9
       refute verse.has_caesura_after? 12
       assert verse.has_caesura_after? 13
       refute verse.has_caesura_after? 14
-      assert 'Podług niej później Karol-Kochanku-Radziwiłł'.extend(Verse).has_caesura_after? 7
+      assert Verse.new('Podług niej później Karol-Kochanku-Radziwiłł').has_caesura_after? 7
     end
   end
 
   describe '#rhyme_pattern' do
     it 'returns the rhyme pattern' do
-      'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend(Verse).rhyme_pattern.must_equal 'owie'
-      'Nowogródzki ochraniasz z jego wiernym ludem!'.extend(Verse).rhyme_pattern.must_equal 'udem'
-      'Bo je zbliżała dzieciom do ust po kolei;'.extend(Verse).rhyme_pattern.must_equal     'ei'
+      Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').rhyme_pattern.must_equal 'owie'
+      Verse.new('Nowogródzki ochraniasz z jego wiernym ludem!').rhyme_pattern.must_equal 'udem'
+      Verse.new('Bo je zbliżała dzieciom do ust po kolei;').rhyme_pattern.must_equal     'ei'
     end
   end
 
   describe '#syllable_count' do
     it 'returns the number of syllables' do
-      'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'.extend(Verse).syllable_count.must_equal 13
+      Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').syllable_count.must_equal 13
     end
 
     it 'handles edge cases' do
@@ -40,8 +40,8 @@ module Triphthong describe Verse do
         'Escabeau' => 3, 'Fontainbleau' => 3, 'nieautoryzowany' => 7, 'nouveau' => 2, 'teleaudycja' => 5,
         'aequo' => 2, 'aere' => 2, 'aerobic' => 4, 'irae' => 2,
       }.each do |word, count|
-        "#{word}".extend(Verse).syllable_count.must_equal          count, "not #{count} syllables in ‘#{word}’"
-        " #{word} ".extend(Verse).syllable_count.must_equal count, "not #{count} syllables in ‘ #{word} ’"
+        Verse.new("#{word}").syllable_count.must_equal          count, "not #{count} syllables in ‘#{word}’"
+        Verse.new(" #{word} ").syllable_count.must_equal count, "not #{count} syllables in ‘ #{word} ’"
       end
     end
   end

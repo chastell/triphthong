@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Triphthong module Verse
+module Triphthong class Verse < Struct.new :text
   NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
 
   SyllableVowel = Regexp.union [
@@ -31,7 +31,7 @@ module Triphthong module Verse
   ]
 
   def has_caesura_after? number
-    counts = verse_text.split(/\P{L}/).map { |word| word.extend(Verse).syllable_count }
+    counts = verse_text.split(/\P{L}/).map { |word| Verse.new(word).syllable_count }
     sum = 0
     sum += counts.shift while sum < number and counts.any?
     sum == number
@@ -45,9 +45,13 @@ module Triphthong module Verse
     verse_text.scan(SyllableVowel).size
   end
 
+  def to_s
+    text
+  end
+
   private
 
   def verse_text
-    @verse_text ||= Unicode.downcase(self).gsub /[^\p{L} -]/, ''
+    @verse_text ||= Unicode.downcase(text).gsub /[^\p{L} -]/, ''
   end
 end end

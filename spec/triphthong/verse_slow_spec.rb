@@ -6,7 +6,7 @@ module Triphthong describe Verse do
   def pan_tadeusz_lines
     @pan_tadeusz_lines ||= File.read('spec/fixtures/pan-tadeusz.txt').lines.map(&:chomp).reject do |line|
       line.empty? or line.start_with? ' '
-    end.map { |line| line.extend Verse }
+    end.map { |line| Verse.new line }
   end
 
   describe '#has_caesura_after?' do
