@@ -38,6 +38,7 @@ module Triphthong describe Verse do
         'jednousi' => 4, 'vous' => 1,
         'Fontain' => 2, 'betaina' => 4,
         'Escabeau' => 3, 'Fontainbleau' => 3, 'nieautoryzowany' => 7, 'nouveau' => 2, 'teleaudycja' => 5,
+        'aequo' => 2, 'aere' => 2, 'aerobic' => 4, 'irae' => 2,
       }.each do |word, count|
         "#{word}".extend(Verse).syllable_count.must_equal          count, "not #{count} syllables in ‘#{word}’"
         " #{word} ".extend(Verse).syllable_count.must_equal count, "not #{count} syllables in ‘ #{word} ’"

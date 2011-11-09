@@ -4,6 +4,9 @@ module Triphthong module Verse
   NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
 
   SyllableVowel = Regexp.union [
+    /ae(?=q|re)/,
+    /ae\b/,
+    /(?<=q)uo/,
     /(?<=et)a(?=i)/,
     /(?<=t)ai(?=n)/,
     /(?<!el|ni)eau/,
