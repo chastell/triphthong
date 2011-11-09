@@ -31,18 +31,18 @@ module Triphthong class Verse < Struct.new :text, :source
   ]
 
   def has_caesura_after? number
-    counts = verse_text.split(/\P{L}/).map { |word| Verse.new(word).syllable_count }
+    counts = normalised.split(/\P{L}/).map { |word| Verse.new(word).syllable_count }
     sum = 0
     sum += counts.shift while sum < number and counts.any?
     sum == number
   end
 
   def rhyme_pattern
-    verse_text[verse_text.rindex(SyllableVowel, verse_text.rindex(SyllableVowel) - 1)..-1]
+    normalised[normalised.rindex(SyllableVowel, normalised.rindex(SyllableVowel) - 1)..-1]
   end
 
   def syllable_count
-    verse_text.scan(SyllableVowel).size
+    normalised.scan(SyllableVowel).size
   end
 
   def to_s
@@ -51,7 +51,7 @@ module Triphthong class Verse < Struct.new :text, :source
 
   private
 
-  def verse_text
-    @verse_text ||= Unicode.downcase(text).gsub /[^\p{L} -]/, ''
+  def normalised
+    @normalised ||= Unicode.downcase(text).gsub /[^\p{L} -]/, ''
   end
 end end
