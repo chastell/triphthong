@@ -53,4 +53,10 @@ module Triphthong describe Verse do
       end
     end
   end
+
+  describe '#words' do
+    it 'returns the (normalised) words' do
+      Verse.new('Litwo! Ojczyzno moja!').words.must_equal ['litwo', 'ojczyzno', 'moja']
+    end
+  end
 end end

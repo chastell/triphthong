@@ -32,7 +32,7 @@ module Triphthong class Verse < Struct.new :text, :source
   ]
 
   def has_caesura_after? number
-    counts = normalised.split(/\P{L}/).map { |word| Verse.new(word).syllable_count }
+    counts = words.map { |word| Verse.new(word).syllable_count }
     sum = 0
     sum += counts.shift while sum < number and counts.any?
     sum == number
@@ -47,6 +47,10 @@ module Triphthong class Verse < Struct.new :text, :source
   end
 
   alias to_s text
+
+  def words
+    normalised.split /\P{L}/
+  end
 
   private
 
