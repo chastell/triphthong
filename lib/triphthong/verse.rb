@@ -50,6 +50,10 @@ module Triphthong class Verse < Struct.new :text, :source
     true
   end
 
+  def size
+    text.size
+  end
+
   def syllable_count
     normalised.scan(SyllableVowel).size
   end
