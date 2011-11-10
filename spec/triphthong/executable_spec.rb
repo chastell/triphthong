@@ -15,6 +15,9 @@ module Triphthong describe Executable do
   end
 
   describe '#run' do
+    before { VCR.insert_cassette __name__ }
+    after  { VCR.eject_cassette }
+
     it 'creates structure- and rhyme-keyed Verse database' do
       file = Tempfile.new ''
       Executable.new(['build-db-from-txt', '-d', file.path, '-s', '6+17', '-s', '9+13', 'spec/fixtures/pan-tadeusz.intro.txt']).run
