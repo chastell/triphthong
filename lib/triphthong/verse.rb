@@ -60,6 +60,8 @@ module Triphthong class Verse < Struct.new :text, :source
 
   alias to_s text
 
+  protected
+
   def words
     normalised.split /\P{L}/
   end
