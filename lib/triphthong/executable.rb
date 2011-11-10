@@ -9,13 +9,10 @@ module Triphthong class Executable
 
     Trollop.die '--structure must be of the form m+n (where m and n are numbers)' unless opts[:structure].all? { |s| s =~ /^\d+\+\d+$/ }
 
-    @structures = Hash[opts[:structure].map do |str|
-      [str, { caesura: str.split('+').first.to_i, count: str.split('+').map(&:to_i).inject(:+) }]
-    end]
-
-    @datadir = opts[:datadir]
-    @action  = args.shift
-    @paths   = args
+    @structures = opts[:structure]
+    @datadir    = opts[:datadir]
+    @action     = args.shift
+    @paths      = args
   end
 
   def run
@@ -27,8 +24,8 @@ module Triphthong class Executable
         @paths.each do |path|
           File.read(path).extend(Text).sentences.each do |verse|
             verse.source = File.basename path
-            @structures.each do |str, parts|
-              db[str][verse.rhyme_pattern] << verse if verse.syllable_count == parts[:count] and verse.has_caesura_after? parts[:caesura]
+            @structures.each do |str|
+              db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
             end
           end
         end
@@ -37,8 +34,8 @@ module Triphthong class Executable
       @paths.each do |path|
         File.open "#{@datadir}/#{File.basename path}", 'w' do |dest|
           File.read(path).extend(Text).sentences.each do |verse|
-            dest.puts verse if @structures.empty? or @structures.any? do |_, parts|
-              verse.syllable_count == parts[:count] and verse.has_caesura_after? parts[:caesura]
+            dest.puts verse if @structures.empty? or @structures.any? do |str|
+              verse.has_structure? str
             end
           end
         end
