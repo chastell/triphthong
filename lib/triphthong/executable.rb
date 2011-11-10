@@ -30,16 +30,6 @@ module Triphthong class Executable
           end
         end
       end
-    when 'prepare'
-      @paths.each do |path|
-        File.open "#{@datadir}/#{File.basename path}", 'w' do |dest|
-          File.read(path).extend(Text).sentences.each do |verse|
-            dest.puts verse if @structures.empty? or @structures.any? do |str|
-              verse.has_structure? str
-            end
-          end
-        end
-      end
     end
   end
 end end
