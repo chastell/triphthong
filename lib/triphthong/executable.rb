@@ -5,8 +5,12 @@ module Triphthong class Executable
     @opts = Trollop.options args do
       opt :caesura,   'Require cæsura after the given syllable', type: Integer
       opt :datadir,   'Location of the data dir',                default: 'data'
-      opt :syllables, 'Number of syllables',                     type: Integer
+      opt :structure, 'X+Y syllable structure',                  type: String
     end
+
+    @caesura   = @opts[:structure_given] ? @opts[:structure].split('+').first.to_i             : nil
+    @syllables = @opts[:structure_given] ? @opts[:structure].split('+').map(&:to_i).inject(:+) : nil
+
     @action = args.shift
     @files  = args
   end
@@ -16,10 +20,10 @@ module Triphthong class Executable
     when 'prepare'
       @files.each do |src|
         File.open "#{@opts[:datadir]}/#{File.basename src}", 'w' do |dest|
-          File.read(src).extend(Text).sentences.each do |sentence|
-            next if @opts[:caesura_given]   and not sentence.has_caesura_after? @opts[:caesura]
-            next if @opts[:syllables_given] and sentence.syllable_count != @opts[:syllables]
-            dest.puts sentence
+          File.read(src).extend(Text).sentences.each do |verse|
+            next if @caesura   and not verse.has_caesura_after? @caesura
+            next if @syllables and not verse.syllable_count == @syllables
+            dest.puts verse
           end
         end
       end
