@@ -45,6 +45,7 @@ module Triphthong class Executable
           verses += [a, b]
         end
       end
+      @charlimit -= verses.size + verses.size / 4
       verses.pop while verses.map(&:size).inject(0, :+) > @charlimit or (verses.size % 4).nonzero?
       puts verses.each_slice(4).map { |s| s.map(&:text).join "\n" }.join "\n\n"
     end
