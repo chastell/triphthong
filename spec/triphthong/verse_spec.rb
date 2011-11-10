@@ -76,7 +76,11 @@ module Triphthong describe Verse do
       check_counts 'eu',  'Contrôleur' => 3, 'Docteur' => 2, 'Eugeniusz' => 3, 'eunuch' => 3, 'Europa' => 3, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4
       check_counts 'eu',  'nieustraszony' => 5, 'Odyseusz' => 4, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'Tadeusz' => 3, 'trofeum' => 3
       check_counts 'ey',  'Doweyko' => 3
-      check_counts 'ii',  'akademii' => 4
+      check_counts 'ia',  'akademia' => 4, 'Mia' => 2
+      check_counts 'ią',  'akademią' => 4, 'Mią' => 2
+      check_counts 'ie',  'akademie' => 4, 'Mie' => 2
+      check_counts 'ię',  'akademię' => 4, 'mię' => 1
+      check_counts 'ii',  'akademii' => 4, 'Mii' => 2
       check_counts 'oi',  'foi' => 1
       check_counts 'ou',  'jednousi' => 4, 'vous' => 1
       check_counts 'oy',  'Zamoyski' => 3
