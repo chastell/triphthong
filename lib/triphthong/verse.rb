@@ -29,6 +29,12 @@ module Triphthong class Verse < Struct.new :text, :source
     sum == number or number.zero?
   end
 
+  def has_structure? str
+    caesura = str.split('+').first.to_i
+    count   = str.split('+').map(&:to_i).inject :+
+    has_caesura_after? caesura and syllable_count == count
+  end
+
   def rhyme_pattern
     all = words.join
     all[all.rindex(SyllableVowel, all.rindex(SyllableVowel) - 1)..-1]

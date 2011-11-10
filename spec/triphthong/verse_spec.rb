@@ -17,6 +17,16 @@ module Triphthong describe Verse do
     end
   end
 
+  describe '#has_structure?' do
+    it 'is a predicate whether a Verse has a given Structure' do
+      assert Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_structure? '0+13'
+      refute Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_structure? '0+14'
+      refute Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_structure? '6+7'
+      assert Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').has_structure? '7+6'
+      assert Verse.new('Podług niej później Karol-Kochanku-Radziwiłł').has_structure? '7+6'
+    end
+  end
+
   describe '#rhyme_pattern' do
     it 'returns the rhyme pattern' do
       Verse.new('Litwo! Ojczyzno moja! ty jesteś jak zdrowie!').rhyme_pattern.must_equal 'owie'
