@@ -9,7 +9,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    minitest (2.7.0)
+    minitest (2.8.0)
     rake (0.9.2.2)
     srx-polish (0.2.1)
       term-ansicolor (~> 1.0.5)
