@@ -38,7 +38,7 @@ module Triphthong class Verse < Struct.new :text, :source
   end
 
   def rhyme_pattern
-    all = words.join ' '
+    all = words.join
     all[all.rindex(SyllableVowel, all.rindex(SyllableVowel) - 1)..-1]
   end
 

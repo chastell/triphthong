@@ -22,6 +22,12 @@ module Triphthong describe Verse do
       Verse.new('Nowogródzki ochraniasz z jego wiernym ludem!').rhyme_pattern.must_equal 'udem'
       Verse.new('Bo je zbliżała dzieciom do ust po kolei;').rhyme_pattern.must_equal     'ei'
     end
+
+    it 'doesn’t care for word boundaries' do
+      Verse.new('…ją, Kasię!').rhyme_pattern.must_equal 'asię'
+      Verse.new('jjjąka się…').rhyme_pattern.must_equal 'asię'
+
+    end
   end
 
   describe '#rhymes_with?' do
