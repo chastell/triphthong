@@ -3,6 +3,17 @@
 require_relative '../spec_helper'
 
 module Triphthong describe Executable do
+  describe '.new' do
+    it 'validates --structure’s structure' do
+      error = '--structure must be of the form m+n (where m and n are numbers)'
+      -> { Executable.new ['prepare', '-s', '1+2'] }
+      capture_io { -> { Executable.new ['prepare', '-s', '1 + 2'] }.must_raise SystemExit }.last.must_include error
+      capture_io { -> { Executable.new ['prepare', '-s', 'a+b']   }.must_raise SystemExit }.last.must_include error
+      capture_io { -> { Executable.new ['prepare', '-s', '+1']    }.must_raise SystemExit }.last.must_include error
+      capture_io { -> { Executable.new ['prepare', '-s', 'foo']   }.must_raise SystemExit }.last.must_include error
+    end
+  end
+
   describe '#run' do
     it 'plucks sentences from the passed files' do
       Dir.mktmpdir do |tempdir|

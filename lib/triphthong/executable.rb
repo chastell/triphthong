@@ -8,6 +8,8 @@ module Triphthong class Executable
       opt :structure, 'X+Y syllable structure',                  type: String
     end
 
+    Trollop.die '--structure must be of the form m+n (where m and n are numbers)' if @opts[:structure_given] and not @opts[:structure] =~ /^\d+\+\d+$/
+
     @caesura   = @opts[:structure_given] ? @opts[:structure].split('+').first.to_i             : nil
     @syllables = @opts[:structure_given] ? @opts[:structure].split('+').map(&:to_i).inject(:+) : nil
 
