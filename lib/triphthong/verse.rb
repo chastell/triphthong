@@ -55,12 +55,12 @@ module Triphthong class Verse < Struct.new :text, :source
   protected
 
   def words
-    @words ||= Unicode.downcase(text).split /\P{L}/
+    Unicode.downcase(text).split /\P{L}/
   end
 
   private
 
   def word_counts
-    @word_counts ||= words.map { |word| word.scan(SyllableVowel).size }
+    words.map { |word| word.scan(SyllableVowel).size }
   end
 end end
