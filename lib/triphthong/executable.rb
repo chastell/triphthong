@@ -22,7 +22,7 @@ module Triphthong class Executable
     db = YAML::Store.new @database
 
     case @action
-    when 'build-db'
+    when 'build-db-from-txt'
       db.transaction do
         @structures.each { |str, _| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         @paths.each do |path|
