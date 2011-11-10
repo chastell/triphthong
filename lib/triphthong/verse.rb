@@ -39,7 +39,8 @@ module Triphthong class Verse < Struct.new :text, :source
   end
 
   def rhyme_pattern
-    normalised[normalised.rindex(SyllableVowel, normalised.rindex(SyllableVowel) - 1)..-1]
+    all = words.join ' '
+    all[all.rindex(SyllableVowel, all.rindex(SyllableVowel) - 1)..-1]
   end
 
   def rhymes_with? other
@@ -63,14 +64,10 @@ module Triphthong class Verse < Struct.new :text, :source
   protected
 
   def words
-    normalised.split /\P{L}/
+    Unicode.downcase(text).split /\P{L}/
   end
 
   private
-
-  def normalised
-    @normalised ||= Unicode.downcase(text).gsub /[^\p{L} -]/, ''
-  end
 
   def word_syllable_counts
     words.map { |word| word.scan(SyllableVowel).size }
