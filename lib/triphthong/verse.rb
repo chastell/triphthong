@@ -32,9 +32,8 @@ module Triphthong class Verse < Struct.new :text, :source
   ]
 
   def has_caesura_after? number
-    counts = word_syllable_counts
     sum = 0
-    sum += counts.shift while sum < number and counts.any?
+    word_syllable_counts.take_while { |c| sum += c; sum < number }
     sum == number
   end
 
