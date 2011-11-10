@@ -1,34 +1,24 @@
 # encoding: UTF-8
 
 module Triphthong class Verse < Struct.new :text, :source
-  NonEIYVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü/
+  NonEIVovel = /a|ä|à|ą|æ|ë|é|ę|o|ö|ó|ô|u|ü|y/
 
   SyllableVowel = Regexp.union [
-    /foi$/,
-    /ae(?=q|re)/,
-    /ae$/,
-    /(?<=q)uo/,
-    /(?<=et)a(?=i)/,
-    /(?<=t)ai(?=n)/,
+    /ae(?=q|re)/, /ae$/,
+    /(?<=et)a(?=i)/, /(?<=t)ai(?=n)/,
+    /(?<!^[nz])au(?!cz|ł|k)/, /(?<=k)au(?=cz|k)/,
     /(?<!el|ni)eau/,
-    /(?<=n)ou(?=v)/,
-    /(?<!^[nz])au(?!cz|ł|k)/,
-    /(?<=k)au(?=cz|k)/,
-    /e(?=usz)/,
-    /^e(?=unu)/,
-    /(?<=f|z)e(?=um)/,
-    /(?<=n)e(?=utr)/,
-    /(?<=ni)e(?=u)/,
-    /e(?=ucz)/,
-    /(?<=s)e(?=ul)/,
-    /eu/,
+    /e(?=usz)/, /^e(?=unu)/, /(?<=f|z)e(?=um)/, /(?<=n)e(?=utr)/, /(?<=ni)e(?=u)/, /e(?=ucz)/, /(?<=s)e(?=ul)/, /eu/,
+    /ey/,
     /e/,
-    /(?<=v)ou(?=s)/,
     /ii$/,
-    /i(?!e(?!nt)|#{NonEIYVovel})/,
+    /i(?!e(?!nt)|#{NonEIVovel})/,
+    /foi$/,
+    /(?<=n)ou(?=v)/, /(?<=v)ou(?=s)/,
+    /oy/,
+    /(?<=q)uo/,
     /qui/,
-    /(?<!e|o)y/,
-    NonEIYVovel,
+    NonEIVovel,
   ]
 
   def has_caesura_after? number
