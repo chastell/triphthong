@@ -7,13 +7,14 @@ module Triphthong class Executable
       opt :datadir,   'Location of the data dir',                default: 'data'
       opt :syllables, 'Number of syllables',                     type: Integer
     end
-    @args = args
+    @action = args.shift
+    @files  = args
   end
 
   def run
-    case @args.shift
+    case @action
     when 'prepare'
-      @args.each do |src|
+      @files.each do |src|
         File.open "#{@opts[:datadir]}/#{File.basename src}", 'w' do |dest|
           File.read(src).extend(Text).sentences.each do |sentence|
             next if @opts[:caesura_given]   and not sentence.has_caesura_after? @opts[:caesura]
