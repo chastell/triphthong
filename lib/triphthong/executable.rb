@@ -23,14 +23,12 @@ module Triphthong class Executable
     when 'build-db'
       db = YAML::Store.new @datadir
       db.transaction do
-        @structures.each { |str, _| db[str] = [] }
-      end
-      db.transaction do
+        @structures.each { |str, _| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         @paths.each do |path|
           File.read(path).extend(Text).sentences.each do |verse|
             verse.source = File.basename path
             @structures.each do |str, parts|
-              db[str] << verse if verse.syllable_count == parts[:count] and verse.has_caesura_after? parts[:caesura]
+              db[str][verse.rhyme_pattern] << verse if verse.syllable_count == parts[:count] and verse.has_caesura_after? parts[:caesura]
             end
           end
         end
