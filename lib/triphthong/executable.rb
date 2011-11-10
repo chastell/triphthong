@@ -31,7 +31,7 @@ module Triphthong class Executable
           info = JSON.parse open(book['href']).read
           text = open(info['txt']).read.force_encoding('UTF-8').split("\n-----\n").first.split("\n\n\n", 2).last.extend Text
           text.sentences.each do |verse|
-            verse.source = book['title']
+            verse.source = "#{book['title']} (#{info['authors'].map { |a| a['name'] }.join ', '})"
             @structures.each do |str|
               db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
             end

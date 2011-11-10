@@ -33,7 +33,7 @@ module Triphthong describe Executable do
       Executable.new(['build-db-from-api', '-d', file.path]).run
       db = YAML::Store.new file.path
       db.transaction(true) do
-        db['7+6']['ody'].must_equal [Verse.new('Podobnie na twe serce, o poeto młody!', 'Ajudah')]
+        db['7+6']['ody'].must_equal [Verse.new('Podobnie na twe serce, o poeto młody!', 'Ajudah (Adam Mickiewicz)')]
       end
     end
 
