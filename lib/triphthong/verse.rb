@@ -26,7 +26,7 @@ module Triphthong class Verse < Struct.new :text, :source
   def has_caesura_after? number
     sum = 0
     word_counts.take_while { |c| sum += c; sum < number }
-    sum == number
+    sum == number or number.zero?
   end
 
   def rhyme_pattern

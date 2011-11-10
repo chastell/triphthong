@@ -6,6 +6,7 @@ module Triphthong describe Verse do
   describe '#has_caesura_after?' do
     it 'returns a Boolean on whether the given String has a cæsura after the given syllable' do
       verse = Verse.new 'Litwo! Ojczyzno moja! ty jesteś jak zdrowie!'
+      assert verse.has_caesura_after? 0
       refute verse.has_caesura_after? 6
       assert verse.has_caesura_after? 7
       refute verse.has_caesura_after? 9
