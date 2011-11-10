@@ -3,7 +3,6 @@
 module Triphthong class Executable
   def initialize args = ARGV
     @opts = Trollop.options args do
-      opt :caesura,   'Require cæsura after the given syllable', type: Integer
       opt :datadir,   'Location of the data dir',                default: 'data'
       opt :structure, 'X+Y syllable structure',                  type: String
     end
