@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'unicode'
   gem.add_development_dependency 'minitest', '>= 2.3'
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'vcr'
 end
