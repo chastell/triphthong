@@ -1,0 +1,27 @@
+---
+7+6:
+  anie:
+  - !ruby/struct:Triphthong::Verse
+    text: Staraliśmy się tyle o jej wychowanie!
+  - !ruby/struct:Triphthong::Verse
+    text: Ku niemu oczy całe zwróciło zebranie.
+  yna:
+  - !ruby/struct:Triphthong::Verse
+    text: On nas wszystkich zawstydził; oj, dzielny księżyna!
+  - !ruby/struct:Triphthong::Verse
+    text: On tu nie przyjdzie; próżno wzywać bernardyna.
+  yszę:
+  - !ruby/struct:Triphthong::Verse
+    text: Odpocząć, kiedy dźwięki takie cudne Słyszę…
+  - !ruby/struct:Triphthong::Verse
+    text: Nie dlatego, że widzę, nie przeto, że słyszę.
+  any:
+  - !ruby/struct:Triphthong::Verse
+    text: Koń Tadeusza czekał w stajni osiodłany.
+  - !ruby/struct:Triphthong::Verse
+    text: ! 'Tam włość już kończy ucztę: krążą miodu dzbany.'
+  erać:
+  - !ruby/struct:Triphthong::Verse
+    text: Umilkli wszyscy i ust nie śmieli otwierać.
+  - !ruby/struct:Triphthong::Verse
+    text: Nareszcie rzekł Woźnemu, że się chce rozbierać.

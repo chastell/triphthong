@@ -24,5 +24,11 @@ module Triphthong describe Executable do
         db['9+13']['obie'].must_equal [Verse.new('Dziś piękność twą w całej ozdobie Widzę i opisuję, bo tęsknię po tobie.',            'pan-tadeusz.intro.txt')]
       end
     end
+
+    it 'rhymes!' do
+      stdout = capture_io { Executable.new(['rhyme', '-c', '400', '-d', 'spec/fixtures/db.yml', '-s', '7+6']).run }.first
+      stdout.size.must_be :<=, 400
+      stdout.count("\n").must_equal 4+1+4
+    end
   end
 end end
