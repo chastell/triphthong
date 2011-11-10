@@ -27,14 +27,18 @@ module Triphthong class Executable
         @structures.each { |str, _| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         books = JSON.parse open('http://www.wolnelektury.pl/api/books/').read
         books.each.with_index do |book, i|
-          puts "#{(i+1).to_s.rjust books.size.to_s.size}/#{books.size}: #{book['title']}"
-          info = JSON.parse open(book['href']).read
-          text = open(info['txt']).read.force_encoding('UTF-8').split("\n-----\n").first.split("\n\n\n", 2).last.extend Text
-          text.sentences.each do |verse|
-            verse.source = "#{book['title']} (#{info['authors'].map { |a| a['name'] }.join ', '})"
-            @structures.each do |str|
-              db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
+          begin
+            puts "#{(i+1).to_s.rjust books.size.to_s.size}/#{books.size}: #{book['title']}"
+            info = JSON.parse open(book['href']).read
+            text = open(info['txt']).read.force_encoding('UTF-8').split("\n-----\n").first.split("\n\n\n", 2).last.extend Text
+            text.sentences.each do |verse|
+              verse.source = "#{book['title']} (#{info['authors'].map { |a| a['name'] }.join ', '})"
+              @structures.each do |str|
+                db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
+              end
             end
+          rescue
+            next
           end
         end
       end
