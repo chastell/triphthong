@@ -57,5 +57,15 @@ module Triphthong describe Executable do
         END
       end
     end
+
+    it 'creates structure- and rhyme-keyed Verse database' do
+      file = Tempfile.new ''
+      Executable.new(['build-db', '-d', file.path, '-s', '6+17', '-s', '9+13', 'spec/fixtures/pan-tadeusz.intro.txt']).run
+      db = YAML::Store.new file.path
+      db.transaction(true) do
+        db['6+17'].must_equal [Verse.new('ty jesteś jak zdrowie: Ile cię trzeba cenić, ten tylko się dowie, Kto cię stracił.', 'pan-tadeusz.intro.txt')]
+        db['9+13'].must_equal [Verse.new('Dziś piękność twą w całej ozdobie Widzę i opisuję, bo tęsknię po tobie.',            'pan-tadeusz.intro.txt')]
+      end
+    end
   end
 end end

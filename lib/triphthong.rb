@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-require 'tmpdir'
+require 'yaml/store'
 
 require 'srx/polish/sentence_splitter'
 require 'trollop'
