@@ -47,5 +47,15 @@ module Triphthong describe Executable do
         END
       end
     end
+
+    it 'accepts multiple structures' do
+      Dir.mktmpdir do |tempdir|
+        Executable.new(['prepare', '-d', tempdir, '-s', '6+17', '-s', '9+13', 'spec/fixtures/pan-tadeusz.intro.txt']).run
+        File.read("#{tempdir}/pan-tadeusz.intro.txt").must_equal <<-END.gsub /^\s*/, ''
+          ty jesteś jak zdrowie: Ile cię trzeba cenić, ten tylko się dowie, Kto cię stracił.
+          Dziś piękność twą w całej ozdobie Widzę i opisuję, bo tęsknię po tobie.
+        END
+      end
+    end
   end
 end end
