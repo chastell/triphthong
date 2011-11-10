@@ -14,12 +14,15 @@ module Triphthong class Verse < Struct.new :text, :source
     /(?<=^m)ię$/,
     /(?<=^m)i(?=(#{NonEIVovel}|e|i)$)/,
     /ii$/,
+    /ille/,
     /i(?!e(?!nt)|#{NonEIVovel})/,
     /foi$/,
     /(?<=n)ou(?=v)/, /(?<=v)ou(?=s)/,
+    /oyce$/,
     /oy/,
     /(?<=q)uo/,
-    /qui/,
+    /uille/,
+    /qui(?!lle)/,
     NonEIVovel,
   ]
 

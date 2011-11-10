@@ -78,26 +78,27 @@ module Triphthong describe Verse do
     end
 
     it 'handles edge cases' do
-      check_counts 'non-pl', 'Müller' => 2, 'Raphaël' => 3, 'Störch' => 1, 'Vorwärts' => 2
-      check_counts 'ae',  'aequo' => 2, 'aere' => 2, 'aerobic' => 4, 'irae' => 2
-      check_counts 'ai',  'betaina' => 4, 'Fontain' => 2
-      check_counts 'au',  'auto' => 2, 'inauguracja' => 5, 'kauczuk' => 2, 'naubijać' => 4, 'naubliżać' => 4, 'nauczanie' => 4, 'nauczka' => 3
-      check_counts 'au',  'nauka' => 3, 'nausznik' => 3, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3, 'zauroczenie' => 5
-      check_counts 'eau', 'Escabeau' => 3, 'Fontainbleau' => 3, 'nieautoryzowany' => 7, 'nouveau' => 2, 'teleaudycja' => 5
-      check_counts 'eu',  'Contrôleur' => 3, 'Docteur' => 2, 'Eugeniusz' => 3, 'eunuch' => 3, 'Europa' => 3, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4
-      check_counts 'eu',  'nieustraszony' => 5, 'Odyseusz' => 4, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'Tadeusz' => 3, 'trofeum' => 3
-      check_counts 'ey',  'Doweyko' => 3
-      check_counts 'ia',  'akademia' => 4, 'Mia' => 2
-      check_counts 'ią',  'akademią' => 4, 'Mią' => 2
-      check_counts 'ie',  'akademie' => 4, 'Mie' => 2
-      check_counts 'ię',  'akademię' => 4, 'mię' => 1
-      check_counts 'ii',  'akademii' => 4, 'Mii' => 2
-      check_counts 'oi',  'foi' => 1
-      check_counts 'ou',  'jednousi' => 4, 'vous' => 1
-      check_counts 'oy',  'Zamoyski' => 3
-      check_counts 'ui',  'qui' => 1
-      check_counts 'uo',  'quo' => 1
-      check_counts 'ui',  'quiz' => 1
+      check_counts 'non-pl','Müller' => 2, 'Raphaël' => 3, 'Störch' => 1, 'Vorwärts' => 2
+      check_counts 'ae',    'aequo' => 2, 'aere' => 2, 'aerobic' => 4, 'irae' => 2
+      check_counts 'ai',    'betaina' => 4, 'Fontain' => 2
+      check_counts 'au',    'auto' => 2, 'inauguracja' => 5, 'kauczuk' => 2, 'naubijać' => 4, 'naubliżać' => 4, 'nauczanie' => 4, 'nauczka' => 3
+      check_counts 'au',    'nauka' => 3, 'nausznik' => 3, 'niezaułkowy' => 5, 'paranauka' => 5, 'zaułek' => 3, 'zauroczenie' => 5
+      check_counts 'eau',   'Escabeau' => 3, 'Fontainbleau' => 3, 'nieautoryzowany' => 7, 'nouveau' => 2, 'teleaudycja' => 5
+      check_counts 'eu',    'Contrôleur' => 3, 'Docteur' => 2, 'Eugeniusz' => 3, 'eunuch' => 3, 'Europa' => 3, 'muzeum' => 3, 'neutralny' => 4, 'nieuczciwy' => 4
+      check_counts 'eu',    'nieustraszony' => 5, 'Odyseusz' => 4, 'przeuczony' => 4, 'reumatyzm' => 3, 'seulski' => 3, 'Tadeusz' => 3, 'trofeum' => 3
+      check_counts 'ey',    'Doweyko' => 3
+      check_counts 'ia',    'akademia' => 4, 'Mia' => 2
+      check_counts 'ią',    'akademią' => 4, 'Mią' => 2
+      check_counts 'ie',    'akademie' => 4, 'Mie' => 2
+      check_counts 'ię',    'akademię' => 4, 'mię' => 1
+      check_counts 'ii',    'akademii' => 4, 'Mii' => 2
+      check_counts 'oi',    'foi' => 1
+      check_counts 'ou',    'jednousi' => 4, 'vous' => 1
+      check_counts 'oy',    'Soyez' => 2, 'Zamoyski' => 3
+      check_counts 'oyce',  'Joyce' => 1
+      check_counts 'ui',    'qui' => 1, 'quiz' => 1
+      check_counts 'uille', 'tranquille' => 2
+      check_counts 'uo',    'quo' => 1
     end
   end
 end end
