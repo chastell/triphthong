@@ -28,6 +28,15 @@ module Triphthong describe Executable do
       end
     end
 
+    it 'creates structure- and rhyme-keyed Verse database from API' do
+      file = Tempfile.new ''
+      Executable.new(['build-db-from-api', '-d', file.path]).run
+      db = YAML::Store.new file.path
+      db.transaction(true) do
+        db['7+6']['ody'].must_equal [Verse.new('Podobnie na twe serce, o poeto młody!', 'Ajudah')]
+      end
+    end
+
     it 'rhymes!' do
       stdout = capture_io { Executable.new(['rhyme', '-c', '400', '-d', 'spec/fixtures/db.yml', '-s', '7+6']).run }.first
       stdout.size.must_be :<=, 400

@@ -1,5 +1,7 @@
 # encoding: UTF-8
 
+require 'json'
+require 'open-uri'
 require 'yaml/store'
 
 require 'srx/polish/sentence_splitter'
