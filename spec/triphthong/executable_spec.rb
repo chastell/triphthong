@@ -30,9 +30,9 @@ module Triphthong describe Executable do
 
     it 'creates structure- and rhyme-keyed Verse database from API' do
       file = Tempfile.new ''
-      Executable.new(['build-db-from-api', '-d', file.path]).run
+      capture_io { Executable.new(['build-db-from-api', '-d', file.path]).run }.first.must_include '1/1: Ajudah'
       db = YAML::Store.new file.path
-      db.transaction(true) do
+      db.transaction true do
         db['7+6']['ody'].must_equal [Verse.new('Podobnie na twe serce, o poeto młody!', 'Ajudah (Adam Mickiewicz)')]
       end
     end
