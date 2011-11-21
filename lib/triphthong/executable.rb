@@ -42,18 +42,6 @@ module Triphthong class Executable
           end
         end
       end
-    when 'build-db-from-txt'
-      db.transaction do
-        @structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
-        @paths.each do |path|
-          File.read(path).extend(Text).sentences.each do |verse|
-            verse.source = File.basename path
-            @structures.each do |str|
-              db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
-            end
-          end
-        end
-      end
     when 'rhyme'
       verses = []
       db.transaction true do

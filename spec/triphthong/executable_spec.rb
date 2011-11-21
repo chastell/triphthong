@@ -18,16 +18,6 @@ module Triphthong describe Executable do
     before { VCR.insert_cassette 'Executable#run' }
     after  { VCR.eject_cassette }
 
-    it 'creates structure- and rhyme-keyed Verse database' do
-      file = Tempfile.new ''
-      Executable.new(['build-db-from-txt', '-d', file.path, '-s', '6+17', '-s', '9+13', 'spec/fixtures/pan-tadeusz.intro.txt']).run
-      db = YAML::Store.new file.path
-      db.transaction(true) do
-        db['6+17']['acił'].must_equal [Verse.new('ty jesteś jak zdrowie: Ile cię trzeba cenić, ten tylko się dowie, Kto cię stracił.', 'pan-tadeusz.intro.txt')]
-        db['9+13']['obie'].must_equal [Verse.new('Dziś piękność twą w całej ozdobie Widzę i opisuję, bo tęsknię po tobie.',            'pan-tadeusz.intro.txt')]
-      end
-    end
-
     it 'creates structure- and rhyme-keyed Verse database from API' do
       file = Tempfile.new ''
       capture_io { Executable.new(['build-db-from-api', '-d', file.path]).run }.first.must_include '1/1: Ajudah'
