@@ -15,7 +15,7 @@ module Triphthong describe Executable do
   end
 
   describe '#run' do
-    before { VCR.insert_cassette __name__ }
+    before { VCR.insert_cassette 'Executable#run' }
     after  { VCR.eject_cassette }
 
     it 'creates structure- and rhyme-keyed Verse database' do
