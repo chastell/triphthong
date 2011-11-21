@@ -24,7 +24,7 @@ module Triphthong class Executable
     case @action
     when 'build-db-from-api'
       db.transaction do
-        @structures.each { |str, _| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
+        @structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         books = JSON.parse open('http://www.wolnelektury.pl/api/books/').read
         books.each.with_index do |book, i|
           begin
@@ -44,7 +44,7 @@ module Triphthong class Executable
       end
     when 'build-db-from-txt'
       db.transaction do
-        @structures.each { |str, _| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
+        @structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         @paths.each do |path|
           File.read(path).extend(Text).sentences.each do |verse|
             verse.source = File.basename path
