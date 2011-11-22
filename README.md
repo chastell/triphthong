@@ -21,6 +21,7 @@ To do
 
 * improve #rhyme_pattern to pass Pan Tadeusz test
 * add Balladyna, Beniowski, Monacho- and Antymonachomachia to fixtures
+* refactor `Executable#run`
 * handle laur/laurka/laurowy syllable counts
 * update README with executable usage examples
 * add syllable splitter
