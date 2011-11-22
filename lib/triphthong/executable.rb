@@ -22,7 +22,7 @@ module Triphthong class Executable
     db = YAML::Store.new @database
 
     case @action
-    when 'build-db-from-api'
+    when 'build-db'
       db.transaction do
         @structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         books = JSON.parse open('http://www.wolnelektury.pl/api/books/').read
