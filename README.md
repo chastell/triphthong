@@ -29,4 +29,4 @@ To do
 
 ---
 
-© MMXI Piotr Szotkowski <chastell@chastell.net>, licensed under AGPL 3 (see LICENCE)
+© MMXI-MMXII Piotr Szotkowski <chastell@chastell.net>, licensed under AGPL 3 (see LICENCE)
