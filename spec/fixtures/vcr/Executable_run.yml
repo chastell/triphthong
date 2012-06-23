@@ -1,197 +1,212 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.wolnelektury.pl:80/api/books/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+http_interactions:
+- request:
+    method: get
+    uri: http://www.wolnelektury.pl/api/books/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      content-length:
+      Content-Length:
       - '226298'
-      keep-alive:
+      Keep-Alive:
       - timeout=15, max=100
-      cache-control:
+      Cache-Control:
       - max-age=600
-      content-language:
+      Content-Language:
       - pl
-      date:
+      Date:
       - Thu, 10 Nov 2011 18:52:28 GMT
-      etag:
+      Etag:
       - ! '"b86792444cdffe36e75daff096c429b3"'
-      expires:
+      Expires:
       - Thu, 10 Nov 2011 19:02:29 GMT
-      last-modified:
+      Last-Modified:
       - Thu, 10 Nov 2011 18:52:29 GMT
-      server:
+      Server:
       - Apache/2.2.16 (Debian)
-      vary:
+      Vary:
       - Authorization,Accept-Language,Cookie
-    body: ! "[\n    {\n        \"href\": \"http://www.wolnelektury.pl/api/books/sonety-krymskie-ajudah/\",\n
-      \       \"title\": \"Ajudah\"\n    }\n]"
+    body:
+      encoding: UTF-8
+      string: ! "[\n    {\n        \"href\": \"http://www.wolnelektury.pl/api/books/sonety-krymskie-ajudah/\",\n
+        \       \"title\": \"Ajudah\"\n    }\n]"
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.wolnelektury.pl:80/api/books/sonety-krymskie-ajudah/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Fri, 22 Jun 2012 04:42:57 GMT
+- request:
+    method: get
+    uri: http://www.wolnelektury.pl/api/books/sonety-krymskie-ajudah/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      keep-alive:
+      Keep-Alive:
       - timeout=15, max=100
-      cache-control:
+      Cache-Control:
       - max-age=600
-      content-language:
+      Content-Language:
       - pl
-      date:
+      Date:
       - Thu, 10 Nov 2011 18:56:50 GMT
-      etag:
+      Etag:
       - ! '"df7ac7d6468ca474687e2f7da23bd38d"'
-      expires:
+      Expires:
       - Thu, 10 Nov 2011 19:06:50 GMT
-      last-modified:
+      Last-Modified:
       - Thu, 10 Nov 2011 18:56:50 GMT
-      server:
+      Server:
       - Apache/2.2.16 (Debian)
-      vary:
+      Vary:
       - Authorization,Accept-Language,Cookie
-    body: ! "{\n    \"xml\": \"http://www.wolnelektury.pl/media/lektura/sonety-krymskie-ajudah_______.xml\",\n
-      \   \"themes\": [],\n    \"genres\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/genres/sonet/\",\n
-      \           \"name\": \"Sonet\"\n        }\n    ],\n    \"mobi\": \"http://www.wolnelektury.pl/media/book/mobi/ajudah.mobi\",\n
-      \   \"kinds\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/kinds/liryka/\",\n
-      \           \"name\": \"Liryka\"\n        }\n    ],\n    \"parent\": {\n        \"slug\":
-      \"sonety-krymskie\",\n        \"title\": \"Sonety krymskie\"\n    },\n    \"title\":
-      \"Ajudah\",\n    \"media\": \"<django.db.models.fields.related.RelatedManager
-      object at 0x7fe7d0ffc690>\",\n    \"epochs\": [\n        {\n            \"href\":
-      \"http://www.wolnelektury.pl/api/epochs/romantyzm/\",\n            \"name\":
-      \"Romantyzm\"\n        }\n    ],\n    \"html\": \"http://www.wolnelektury.pl/media/book/html/ajudah.html\",\n
-      \   \"books\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/books/l-sonety-krymskie/\",\n
-      \           \"name\": \"Sonety krymskie\"\n        }\n    ],\n    \"authors\":
-      [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/authors/adam-mickiewicz/\",\n
-      \           \"name\": \"Adam Mickiewicz\"\n        }\n    ],\n    \"pdf\": \"http://www.wolnelektury.pl/media/lektura/sonety-krymskie-ajudah_1.pdf\",\n
-      \   \"txt\": \"http://www.wolnelektury.pl/media/lektura/ajudah.txt\",\n    \"epub\":
-      \"\"\n}"
+    body:
+      encoding: UTF-8
+      string: ! "{\n    \"xml\": \"http://www.wolnelektury.pl/media/lektura/sonety-krymskie-ajudah_______.xml\",\n
+        \   \"themes\": [],\n    \"genres\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/genres/sonet/\",\n
+        \           \"name\": \"Sonet\"\n        }\n    ],\n    \"mobi\": \"http://www.wolnelektury.pl/media/book/mobi/ajudah.mobi\",\n
+        \   \"kinds\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/kinds/liryka/\",\n
+        \           \"name\": \"Liryka\"\n        }\n    ],\n    \"parent\": {\n        \"slug\":
+        \"sonety-krymskie\",\n        \"title\": \"Sonety krymskie\"\n    },\n    \"title\":
+        \"Ajudah\",\n    \"media\": \"<django.db.models.fields.related.RelatedManager
+        object at 0x7fe7d0ffc690>\",\n    \"epochs\": [\n        {\n            \"href\":
+        \"http://www.wolnelektury.pl/api/epochs/romantyzm/\",\n            \"name\":
+        \"Romantyzm\"\n        }\n    ],\n    \"html\": \"http://www.wolnelektury.pl/media/book/html/ajudah.html\",\n
+        \   \"books\": [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/books/l-sonety-krymskie/\",\n
+        \           \"name\": \"Sonety krymskie\"\n        }\n    ],\n    \"authors\":
+        [\n        {\n            \"href\": \"http://www.wolnelektury.pl/api/authors/adam-mickiewicz/\",\n
+        \           \"name\": \"Adam Mickiewicz\"\n        }\n    ],\n    \"pdf\":
+        \"http://www.wolnelektury.pl/media/lektura/sonety-krymskie-ajudah_1.pdf\",\n
+        \   \"txt\": \"http://www.wolnelektury.pl/media/lektura/ajudah.txt\",\n    \"epub\":
+        \"\"\n}"
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.wolnelektury.pl:80/media/lektura/ajudah.txt
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Fri, 22 Jun 2012 04:42:57 GMT
+- request:
+    method: get
+    uri: http://www.wolnelektury.pl/media/lektura/ajudah.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      content-type:
+      Content-Type:
       - text/plain
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      keep-alive:
+      Keep-Alive:
       - timeout=15, max=100
-      accept-ranges:
+      Accept-Ranges:
       - bytes
-      date:
+      Date:
       - Thu, 10 Nov 2011 18:56:50 GMT
-      last-modified:
+      Last-Modified:
       - Mon, 24 Jan 2011 15:56:04 GMT
-      server:
+      Server:
       - Apache/2.2.16 (Debian)
-      vary:
+      Vary:
       - Accept-Encoding
-      warning:
+      Warning:
       - 214 warkaz-fe03 "Transformation applied"
-    body: ! 'Adam Mickiewicz
+    body:
+      encoding: UTF-8
+      string: ! 'Adam Mickiewicz
 
 
-      Sonety krymskie
+        Sonety krymskie
 
-      Ajudah
-
-
-
-
-      Lubię poglądać wsparty na Judahu skale,
-
-      Jak spienione bałwany, to w czarne szeregi
-
-      Ścisnąwszy się, buchają, to jak srébrne śniegi
-
-      W milionowych tęczach kołują wspaniale.
-
-
-      Trącą się o mieliznę, rozbiją na fale,
-
-      Jak wojsko wielorybów, zalegając brzegi,
-
-      Zdobędą ląd w tryumfie, i na powrót zbiegi,
-
-      Miecą za sobą muszle, perły i korale.
-
-
-      Podobnie na twe serce, o poeto młody!
-
-      Namiętność często groźne wzburza niepogody;
-
-      Lecz gdy podniesiesz bardon, ona bez twéj szkody
-
-
-      Ucieka w zapomnienia pogrążyć się toni,
-
-      I nieśmiertelne pieśni za sobą uroni,
-
-      Z których wieki uplotą ozdobę twych skroni.
+        Ajudah
 
 
 
 
+        Lubię poglądać wsparty na Judahu skale,
 
-      -----
+        Jak spienione bałwany, to w czarne szeregi
 
-      Ta lektura, podobnie jak tysiące innych, dostępna jest na stronie wolnelektury.pl.
+        Ścisnąwszy się, buchają, to jak srébrne śniegi
 
-      Wersja lektury w opracowaniu merytorycznym i krytycznym (przypisy i motywy)
-      dostępna jest na stronie http://wolnelektury.pl/katalog/lektura/sonety-krymskie-ajudah.
-
-
-      Utwór opracowany został w ramach projektu Wolne Lektury przez fundację Nowoczesna
-      Polska.
+        W milionowych tęczach kołują wspaniale.
 
 
-      Ten utwór nie jest chroniony prawem autorskim i znajduje się w domenie publicznej,
-      co oznacza że możesz go swobodnie wykorzystywać, publikować i rozpowszechniać.
-      Jeśli utwór opatrzony jest dodatkowymi materiałami (przypisy, motywy literackie
-      etc.), które podlegają prawu autorskiemu, to te dodatkowe materiały udostępnione
-      są na licencji Creative Commons Uznanie Autorstwa – Na Tych Samych Warunkach
-      3.0 PL (http://creativecommons.org/licenses/by-sa/3.0/).
+        Trącą się o mieliznę, rozbiją na fale,
+
+        Jak wojsko wielorybów, zalegając brzegi,
+
+        Zdobędą ląd w tryumfie, i na powrót zbiegi,
+
+        Miecą za sobą muszle, perły i korale.
 
 
-      Tekst opracowany na podstawie: Mickiewicz, Adam (1798-1855), Poezje, tom 2,
-      Wiersze z lat 1825-1855 (Pieśni - Sonety - Poezje patrjotyczne, religijne i
-      filozoficzne - Wiersze okolicznościowe - Bajki), wstęp i układ Józefa Kallenbacha,
-      objaśn. zaopatrzył Jan Bystrzycki, Krakowska Spółdzielnia Wydawnicza, wyd. 2
-      popr., druk. W. L. Anczyca, Kraków, 1928
+        Podobnie na twe serce, o poeto młody!
+
+        Namiętność często groźne wzburza niepogody;
+
+        Lecz gdy podniesiesz bardon, ona bez twéj szkody
 
 
-      Publikacja zrealizowana w ramach projektu Wolne Lektury (http://wolnelektury.pl).
-      Reprodukcja cyfrowa wykonana przez Bibliotekę Narodową z egzemplarza pochodzącego
-      ze zbiorów BN.
+        Ucieka w zapomnienia pogrążyć się toni,
+
+        I nieśmiertelne pieśni za sobą uroni,
+
+        Z których wieki uplotą ozdobę twych skroni.
 
 
-      Opracowanie redakcyjne i przypisy: Aleksandra Sekuła, Olga Sutkowska
+
+
+
+        -----
+
+        Ta lektura, podobnie jak tysiące innych, dostępna jest na stronie wolnelektury.pl.
+
+        Wersja lektury w opracowaniu merytorycznym i krytycznym (przypisy i motywy)
+        dostępna jest na stronie http://wolnelektury.pl/katalog/lektura/sonety-krymskie-ajudah.
+
+
+        Utwór opracowany został w ramach projektu Wolne Lektury przez fundację Nowoczesna
+        Polska.
+
+
+        Ten utwór nie jest chroniony prawem autorskim i znajduje się w domenie publicznej,
+        co oznacza że możesz go swobodnie wykorzystywać, publikować i rozpowszechniać.
+        Jeśli utwór opatrzony jest dodatkowymi materiałami (przypisy, motywy literackie
+        etc.), które podlegają prawu autorskiemu, to te dodatkowe materiały udostępnione
+        są na licencji Creative Commons Uznanie Autorstwa – Na Tych Samych Warunkach
+        3.0 PL (http://creativecommons.org/licenses/by-sa/3.0/).
+
+
+        Tekst opracowany na podstawie: Mickiewicz, Adam (1798-1855), Poezje, tom 2,
+        Wiersze z lat 1825-1855 (Pieśni - Sonety - Poezje patrjotyczne, religijne
+        i filozoficzne - Wiersze okolicznościowe - Bajki), wstęp i układ Józefa Kallenbacha,
+        objaśn. zaopatrzył Jan Bystrzycki, Krakowska Spółdzielnia Wydawnicza, wyd.
+        2 popr., druk. W. L. Anczyca, Kraków, 1928
+
+
+        Publikacja zrealizowana w ramach projektu Wolne Lektury (http://wolnelektury.pl).
+        Reprodukcja cyfrowa wykonana przez Bibliotekę Narodową z egzemplarza pochodzącego
+        ze zbiorów BN.
+
+
+        Opracowanie redakcyjne i przypisy: Aleksandra Sekuła, Olga Sutkowska
 
 '
     http_version: '1.1'
+  recorded_at: Fri, 22 Jun 2012 04:42:57 GMT
+recorded_with: VCR 2.2.2

@@ -7,8 +7,8 @@ require 'vcr'
 
 require_relative '../lib/triphthong'
 
-VCR.config do |config|
+VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr'
   config.default_cassette_options = { record: :new_episodes }
-  config.stub_with :fakeweb
+  config.hook_into :fakeweb
 end
