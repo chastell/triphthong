@@ -16,7 +16,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     term-ansicolor (1.0.7)
     trollop (1.16.2)
-    unicode (0.4.2)
+    unicode (0.4.3)
     vcr (2.2.4)
 
 PLATFORMS
@@ -24,7 +24,7 @@ PLATFORMS
 
 DEPENDENCIES
   fakeweb
-  minitest (>= 2.3)
+  minitest (~> 3.0)
   rake
   triphthong!
   vcr
