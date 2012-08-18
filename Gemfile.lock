@@ -15,7 +15,7 @@ GEM
     srx-polish (0.2.1)
       term-ansicolor (~> 1.0.5)
     term-ansicolor (1.0.7)
-    trollop (1.16.2)
+    trollop (2.0)
     unicode (0.4.3)
     vcr (2.2.4)
 
