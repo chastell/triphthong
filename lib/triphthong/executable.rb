@@ -10,21 +10,19 @@ module Triphthong class Executable
 
     Trollop.die '--structure must be of the form m+n (where m and n are numbers)' unless opts[:structure].all? { |s| s =~ /^\d+\+\d+$/ }
 
+    @action     = args.shift
     @charlimit  = opts[:charlimit]
     @database   = opts[:database]
     @structures = opts[:structure]
-
-    @action = args.shift
-    @paths  = args
   end
 
   def run
-    db = YAML::Store.new @database
+    db = YAML::Store.new database
 
-    case @action
+    case action
     when 'build-db'
       db.transaction do
-        @structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
+        structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         books = JSON.parse open('http://www.wolnelektury.pl/api/books/').read
         books.each.with_index do |book, i|
           begin
@@ -33,7 +31,7 @@ module Triphthong class Executable
             text = open(info['txt']).read.force_encoding('UTF-8').split("\n-----\n").first.split("\n\n\n", 2).last.extend Text
             text.sentences.each do |verse|
               verse.source = "#{book['title']} (#{info['authors'].map { |a| a['name'] }.join ', '})"
-              @structures.each do |str|
+              structures.each do |str|
                 db[str][verse.rhyme_pattern] << verse if verse.has_structure? str
               end
             end
@@ -45,8 +43,8 @@ module Triphthong class Executable
     when 'rhyme'
       verses = []
       db.transaction true do
-        rhymes = db[@structures.first].reject { |_, vs| vs.size < 2 }
-        while verses.map(&:size).inject(0, :+) < @charlimit do
+        rhymes = db[structures.first].reject { |_, vs| vs.size < 2 }
+        while verses.map(&:size).inject(0, :+) < charlimit do
           a, b = rhymes[rhymes.keys.sample].sample 2
           next unless a.rhymes_with? b
           next if a.source and b.source and a.source == b.source
@@ -54,8 +52,12 @@ module Triphthong class Executable
         end
       end
       @charlimit -= verses.size + verses.size / 4
-      verses.pop while verses.map(&:size).inject(0, :+) > @charlimit or (verses.size % 4).nonzero?
+      verses.pop while verses.map(&:size).inject(0, :+) > charlimit or (verses.size % 4).nonzero?
       puts verses.each_slice(4).map { |s| s.map(&:text).join "\n" }.join "\n\n"
     end
   end
+
+  private
+
+  attr_reader :action, :charlimit, :database, :structures
 end end
