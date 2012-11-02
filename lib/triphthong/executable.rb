@@ -22,7 +22,7 @@ module Triphthong class Executable
     case action
     when 'build-db'
       db.transaction do
-        structures.each { |str| db[str] = Hash.new { |str, rhyme| str[rhyme] = [] } }
+        structures.each { |struct| db[struct] = Hash.new { |str, rhyme| str[rhyme] = [] } }
         books = JSON.parse open('http://www.wolnelektury.pl/api/books/').read
         books.each.with_index do |book, i|
           begin
