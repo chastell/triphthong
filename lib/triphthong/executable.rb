@@ -57,7 +57,6 @@ module Triphthong class Executable
     end
   end
 
-  private
-
   attr_reader :action, :charlimit, :database, :structures
+  private     :action, :charlimit, :database, :structures
 end end
