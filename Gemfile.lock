@@ -23,7 +23,7 @@ GEM
     term-ansicolor (1.0.7)
     trollop (2.0)
     unicode (0.4.3)
-    vcr (2.2.5)
+    vcr (2.3.0)
 
 PLATFORMS
   ruby
