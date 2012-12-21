@@ -64,7 +64,7 @@ module Triphthong class Verse < Struct.new :text, :source
   protected
 
   def words
-    Unicode.downcase(text).split /\P{L}/
+    Unicode.downcase(text).split(/\P{L}/)
   end
 
   private
