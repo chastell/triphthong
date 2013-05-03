@@ -1,11 +1,8 @@
-gem 'minitest'
+require 'bundler/setup'
 require 'minitest/autorun'
-
 require 'tempfile'
-
 require 'vcr'
-
-require_relative '../lib/triphthong'
+require 'triphthong'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr'
