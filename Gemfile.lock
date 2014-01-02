@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/chastell/srx-polish.git
-  revision: 0b7d7056128e2b6956208c5ab8f6656c2c6e3d63
+  revision: 61d2c6c6288cef5c0eeab5f6bfe0b42ce013af67
   branch: triphthong
   specs:
     srx-polish (0.2.1)
-      term-ansicolor (~> 1.0.5)
+      term-ansicolor (~> 1.0, >= 1.0.5)
 
 PATH
   remote: .
@@ -18,12 +18,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     fakeweb (1.3.0)
-    minitest (4.7.4)
-    rake (10.0.4)
-    term-ansicolor (1.0.7)
+    minitest (4.7.5)
+    rake (10.1.1)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
+    tins (0.13.1)
     trollop (2.0)
     unicode (0.4.4)
-    vcr (2.4.0)
+    vcr (2.8.0)
 
 PLATFORMS
   ruby
