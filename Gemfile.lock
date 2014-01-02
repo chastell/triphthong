@@ -18,7 +18,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     fakeweb (1.3.0)
-    minitest (4.7.5)
+    minitest (5.2.0)
     rake (10.1.1)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
@@ -32,7 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   fakeweb
-  minitest (~> 4.0)
+  minitest (~> 5.0)
   rake
   srx-polish!
   triphthong!
