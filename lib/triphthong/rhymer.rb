@@ -1,4 +1,4 @@
 module Triphthong class Rhymer
-  def rhyme lenghts: '', rhymes: ''
+  def self.rhyme lenghts: '', rhymes: ''
   end
 end end
