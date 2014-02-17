@@ -5,7 +5,7 @@ module Triphthong class CLIRhymer
   end
 
   def run
-    rhymer.rhyme lenghts: settings.lenghts, rhymes: settings.rhymes
+    puts rhymer.rhyme lenghts: settings.lenghts, rhymes: settings.rhymes
   end
 
   attr_reader :rhymer, :settings
