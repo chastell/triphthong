@@ -12,3 +12,6 @@ IndentationWidth:
 
 MethodDefParentheses:
   Enabled: false
+
+SingleSpaceBeforeFirstArg:
+  Enabled: false
