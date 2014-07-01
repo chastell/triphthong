@@ -1,4 +1,5 @@
 require_relative '../spec_helper'
+require_relative '../../lib/triphthong/rhymer'
 
 module Triphthong describe Rhymer do
   describe '.rhyme' do

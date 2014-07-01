@@ -1,4 +1,5 @@
 require_relative '../spec_helper'
+require_relative '../../lib/triphthong/cli_rhymer'
 
 module Triphthong describe CLIRhymer do
   describe '#run' do
