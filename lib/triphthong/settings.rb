@@ -1,3 +1,5 @@
+require 'optparse'
+
 module Triphthong class Settings
   attr_reader :lenghts, :rhymes
 
