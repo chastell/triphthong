@@ -3,8 +3,8 @@ require_relative 'settings'
 
 module Triphthong class CLIRhymer
   def initialize args, rhymer: Rhymer
-    @settings = Settings.new args
     @rhymer   = rhymer
+    @settings = Settings.new args
   end
 
   def run
