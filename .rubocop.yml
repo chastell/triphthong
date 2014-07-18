@@ -11,7 +11,7 @@ IndentationWidth:
   Enabled: false
 
 MethodDefParentheses:
-  Enabled: false
+  EnforcedStyle: require_no_parentheses
 
 SingleSpaceBeforeFirstArg:
   Enabled: false
