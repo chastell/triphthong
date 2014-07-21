@@ -2,7 +2,7 @@ require_relative 'rhymer'
 require_relative 'settings'
 
 module Triphthong class CLIRhymer
-  def initialize args, rhymer: Rhymer
+  def initialize args, rhymer: Rhymer.new
     @rhymer   = rhymer
     @settings = Settings.new args
   end

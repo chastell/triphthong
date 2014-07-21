@@ -1,6 +1,4 @@
-module Triphthong module Rhymer
-  module_function
-
+module Triphthong class Rhymer
   def rhyme lenghts: '', random: Random.new, rhymes: '', verses: {}
     lenghts.split('-').map(&:to_i).map do |syllable_count|
       verses[syllable_count].sample(random: random)
