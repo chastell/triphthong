@@ -1,12 +1,12 @@
 require 'optparse'
 
 module Triphthong class Settings
-  attr_reader :lenghts, :rhymes
+  attr_reader :lengths, :rhymes
 
   def initialize args
     OptionParser.new do |opts|
-      opts.on '-l', '--lenghts LENGHTS', String, 'Verse lenghts' do |lenghts|
-        @lenghts = lenghts
+      opts.on '-l', '--lengths LENGTHS', String, 'Verse lengths' do |lengths|
+        @lengths = lengths
       end
       opts.on '-r', '--rhymes RHYMES', String, 'Rhyme patterns' do |rhymes|
         @rhymes = rhymes
