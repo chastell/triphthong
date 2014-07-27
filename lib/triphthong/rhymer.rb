@@ -1,9 +1,9 @@
-require_relative 'verse_store'
+require_relative 'verses'
 
 module Triphthong class Rhymer
-  def rhyme lengths: '', rhymes: '', verse_store: VerseStore.new
+  def rhyme lengths: '', rhymes: '', verses: Verses.new
     lengths.split('-').map(&:to_i).map do |length|
-      verse_store.rhymed(length: length)
+      verses.rhymed(length: length)
     end.join "\n"
   end
 end end
