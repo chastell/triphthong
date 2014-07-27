@@ -4,7 +4,7 @@ module Triphthong
   class Settings
     attr_reader :lengths, :rhymes
 
-    def initialize args
+    def initialize(args)
       OptionParser.new do |opts|
         opts.on '-l', '--lengths LENGTHS', String, 'Verse lengths' do |lengths|
           @lengths = lengths
