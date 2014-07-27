@@ -3,6 +3,3 @@ Documentation:
 
 SingleSpaceBeforeFirstArg:
   Enabled: false
-
-TrailingComma:
-  EnforcedStyleForMultiline: comma
