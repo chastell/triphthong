@@ -7,11 +7,14 @@ module Triphthong
     describe '#poem' do
       it 'returns a poem matching the given syllable lengths' do
         verses = fake :verses
-        random = Random.new 1981
-        stub(verses).rhymed(length: 5) do
-          ['haikus are easy', 'refrigerator'].sample random: random
+        stub(verses).rhyme_map('A' => [5], 'B' => [7], 'C' => [5]) do
+          { 'A' => 'easy', 'B' => 'sense', 'C' => 'rator' }
         end
-        stub(verses).rhymed(length: 7) { 'but sometimes they don’t make sense' }
+        stub(verses).verse(length: 5, rhyme: 'easy')  { 'haikus are easy' }
+        stub(verses).verse(length: 5, rhyme: 'rator') { 'refrigerator'    }
+        stub(verses).verse(length: 7, rhyme: 'sense') do
+          'but sometimes they don’t make sense'
+        end
         poem = Rhymer.new.poem lengths: '5-7-5', rhymes: 'ABC', verses: verses
         poem.must_equal <<-end.dedent.strip
           haikus are easy
