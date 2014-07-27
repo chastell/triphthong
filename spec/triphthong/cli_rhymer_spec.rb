@@ -5,7 +5,7 @@ module Triphthong describe CLIRhymer do
   describe '#run' do
     it 'prints what the rhymer returns' do
       rhymer = fake :rhymer
-      stub(rhymer).rhyme(lengths: '5-7-5', rhymes: 'ABC') { "poem\n" }
+      stub(rhymer).poem(lengths: '5-7-5', rhymes: 'ABC') { "poem\n" }
       lambda do
         CLIRhymer.new(%w(--lengths 5-7-5 --rhymes ABC), rhymer: rhymer).run
       end.must_output "poem\n"
