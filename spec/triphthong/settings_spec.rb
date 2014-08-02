@@ -12,8 +12,8 @@ module Triphthong
 
     describe '#rhymes' do
       it 'returns the parsed -r or --rhymes value' do
-        Settings.new(%w(-r AABB)).rhymes.must_equal 'AABB'
-        Settings.new(%w(--rhymes ABC)).rhymes.must_equal 'ABC'
+        Settings.new(%w(-r AABB)).rhymes.must_equal %w(A A B B)
+        Settings.new(%w(--rhymes ABC)).rhymes.must_equal %w(A B C)
       end
     end
   end

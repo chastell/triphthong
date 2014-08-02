@@ -3,7 +3,7 @@ require_relative 'verses'
 module Triphthong
   class Rhymer
     def poem(lengths:, rhymes:, verses: Verses.new)
-      structure = rhymes.split('').zip lengths.split('-').map(&:to_i)
+      structure = rhymes.zip lengths.split('-').map(&:to_i)
       rhyme_lengths = structure.group_by(&:first).map do |symbol, structs|
         [symbol, structs.map(&:last)]
       end.to_h

@@ -10,7 +10,7 @@ module Triphthong
           @lengths = lengths
         end
         opts.on '-r', '--rhymes RHYMES', String, 'Rhyme patterns' do |rhymes|
-          @rhymes = rhymes
+          @rhymes = rhymes.split ''
         end
       end.parse! args
     end
