@@ -3,3 +3,6 @@ Documentation:
 
 SingleSpaceBeforeFirstArg:
   Enabled: false
+
+UnusedMethodArgument:
+  Enabled: false
