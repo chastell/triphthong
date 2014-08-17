@@ -3,6 +3,16 @@ require_relative 'verses'
 module Triphthong
   class Rhymer
     def self.poem(lengths:, rhymes:, verses: Verses.new)
+      new(lengths: lengths, rhymes: rhymes, verses: verses).poem
+    end
+
+    def initialize(lengths:, rhymes:, verses:)
+      @lengths = lengths
+      @rhymes  = rhymes
+      @verses  = verses
+    end
+
+    def poem
       structure     = rhymes.zip lengths
       rhyme_lengths = structure.group_by(&:first).map do |symbol, structs|
         [symbol, structs.map(&:last)]
@@ -12,5 +22,8 @@ module Triphthong
         verses.verse length: length, rhyme: rhyme_map[symbol]
       end.join "\n"
     end
+
+    attr_reader :lengths, :rhymes, :verses
+    private     :lengths, :rhymes, :verses
   end
 end
