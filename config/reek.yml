@@ -1,5 +1,6 @@
 NestedIterators:
-  max_allowed_nesting: 2
+  exclude:
+    - Triphthong::Settings#initialize
 
 IrresponsibleModule:
   enabled: false
