@@ -7,6 +7,6 @@ Bogus.configure { |config| config.search_modules << Triphthong }
 
 class String
   def dedent
-    gsub(/^#{self[/\A\s*/]}/, '')
+    gsub(/^#{scan(/^ +/).min}/, '')
   end
 end
