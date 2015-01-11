@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative '../test_helper'
 require_relative '../../lib/triphthong/cli_rhymer'
 
 module Triphthong
