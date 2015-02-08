@@ -14,5 +14,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'bogus',    '~> 0.1.4'
   gem.add_development_dependency 'minitest', '~> 5.0'
   gem.add_development_dependency 'reek',     '~> 1.3'
-  gem.add_development_dependency 'rubocop',  '~> 0.28.0'
+  gem.add_development_dependency 'rubocop',  '~> 0.29.0'
 end
