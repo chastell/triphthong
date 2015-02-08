@@ -14,7 +14,7 @@ module Triphthong
 
     def poem
       structure.map do |symbol, length|
-        verses.verse length: length, rhyme: rhyme_map[symbol]
+        verses.verse(length: length, rhyme: rhyme_map[symbol])
       end.join "\n"
     end
 
@@ -28,11 +28,11 @@ module Triphthong
     end
 
     def rhyme_map
-      @rhyme_map ||= verses.rhyme_map rhyme_lengths
+      @rhyme_map ||= verses.rhyme_map(rhyme_lengths)
     end
 
     def structure
-      @structure ||= rhymes.zip lengths
+      @structure ||= rhymes.zip(lengths)
     end
   end
 end
