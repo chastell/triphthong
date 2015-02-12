@@ -9,7 +9,7 @@ module Triphthong
     end
 
     def run
-      puts rhymer.poem lengths: settings.lengths, rhymes: settings.rhymes
+      puts rhymer.call(lengths: settings.lengths, rhymes: settings.rhymes)
     end
 
     private_attr_reader :rhymer, :settings

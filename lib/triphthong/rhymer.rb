@@ -2,7 +2,7 @@ require_relative 'verses'
 
 module Triphthong
   class Rhymer
-    def self.poem(lengths:, rhymes:, verses: Verses.new)
+    def self.call(lengths:, rhymes:, verses: Verses.new)
       new(lengths: lengths, rhymes: rhymes, verses: verses).poem
     end
 
