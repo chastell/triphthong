@@ -32,7 +32,7 @@ GEM
     private_attr (1.0.0)
     procto (0.0.2)
     rainbow (2.0.0)
-    reek (1.6.5)
+    reek (1.6.6)
       parser (~> 2.2.0.pre.7)
       rainbow (>= 1.99, < 3.0)
       unparser (~> 0.2.2)
