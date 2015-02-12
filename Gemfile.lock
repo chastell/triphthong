@@ -3,6 +3,7 @@ PATH
   specs:
     triphthong (0.1.0)
       private_attr (~> 1.0)
+      procto (~> 0.0.2)
 
 GEM
   remote: https://rubygems.org/
