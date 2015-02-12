@@ -1,10 +1,9 @@
+require 'procto'
 require_relative 'verses'
 
 module Triphthong
   class Rhymer
-    def self.call(lengths:, rhymes:, verses: Verses.new)
-      new(lengths: lengths, rhymes: rhymes, verses: verses).poem
-    end
+    include Procto.call(:poem)
 
     def initialize(lengths:, rhymes:, verses:)
       @lengths = lengths
