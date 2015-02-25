@@ -17,7 +17,7 @@ module Triphthong
         end
         poem = Rhymer.call(lengths: [5, 7, 5], rhymes: %w(A B C),
                            verses: verses)
-        poem.must_equal <<-end.dedent.chomp
+        poem.must_equal <<-end.dedent
           haikus are easy
           but sometimes they don’t make sense
           refrigerator

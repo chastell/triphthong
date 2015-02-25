@@ -13,8 +13,8 @@ module Triphthong
 
     def poem
       structure.map do |symbol, length|
-        verses.verse(length: length, rhyme: rhyme_map[symbol])
-      end.join "\n"
+        verses.verse(length: length, rhyme: rhyme_map[symbol]) + "\n"
+      end.join
     end
 
     private_attr_reader :lengths, :rhymes, :verses
