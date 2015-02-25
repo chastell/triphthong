@@ -1,8 +1,5 @@
-Documentation:
+Lint/UnusedMethodArgument:
   Enabled: false
 
-SingleSpaceBeforeFirstArg:
-  Enabled: false
-
-UnusedMethodArgument:
+Style/Documentation:
   Enabled: false
