@@ -1,16 +1,8 @@
-GIT
-  remote: git://github.com/chastell/srx-polish.git
-  revision: 61d2c6c6288cef5c0eeab5f6bfe0b42ce013af67
-  branch: triphthong
-  specs:
-    srx-polish (0.2.1)
-      term-ansicolor (~> 1.0, >= 1.0.5)
-
 PATH
   remote: .
   specs:
     triphthong (0.0.0)
-      srx-polish
+      srx-polish (~> 0.2.1)
       trollop (~> 2.0)
       unicode (~> 0.4.4)
 
@@ -20,9 +12,9 @@ GEM
     fakeweb (1.3.0)
     minitest (5.2.0)
     rake (10.1.1)
-    term-ansicolor (1.2.2)
-      tins (~> 0.8)
-    tins (0.13.1)
+    srx-polish (0.2.1)
+      term-ansicolor (~> 1.0.5)
+    term-ansicolor (1.0.7)
     trollop (2.0)
     unicode (0.4.4)
     vcr (2.8.0)
@@ -34,6 +26,5 @@ DEPENDENCIES
   fakeweb (~> 1.3)
   minitest (~> 5.0)
   rake (~> 10.1)
-  srx-polish!
   triphthong!
   vcr (~> 2.8)

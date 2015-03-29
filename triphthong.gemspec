@@ -11,9 +11,9 @@ Gem::Specification.new do |gem|
   gem.executables = gem.files.grep(%r{^bin/}).map { |path| File.basename path }
   gem.test_files  = gem.files.grep %r{^spec/.*\.rb$}
 
-  gem.add_dependency 'srx-polish'
-  gem.add_dependency 'trollop', '~> 2.0'
-  gem.add_dependency 'unicode', '~> 0.4.4'
+  gem.add_dependency 'srx-polish', '~> 0.2.1'
+  gem.add_dependency 'trollop',    '~> 2.0'
+  gem.add_dependency 'unicode',    '~> 0.4.4'
   gem.add_development_dependency 'fakeweb',  '~> 1.3'
   gem.add_development_dependency 'minitest', '~> 5.0'
   gem.add_development_dependency 'rake',     '~> 10.1'
