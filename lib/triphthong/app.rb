@@ -91,21 +91,21 @@ __END__
           color: #888
           text-align: center
         #julek
-          background-image:    -moz-linear-gradient(left, #fff 0%, #fff 70%, #000 70%, #000 100%)
-          background-image:     -ms-linear-gradient(left, #fff 0%, #fff 70%, #000 70%, #000 100%)
-          background-image:      -o-linear-gradient(left, #fff 0%, #fff 70%, #000 70%, #000 100%)
+          background-image:    -moz-linear-gradient(left, #fff 0%, #fff 60%, #000 80%, #000 100%)
+          background-image:     -ms-linear-gradient(left, #fff 0%, #fff 60%, #000 80%, #000 100%)
+          background-image:      -o-linear-gradient(left, #fff 0%, #fff 60%, #000 80%, #000 100%)
           background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(70%, #fff), color-stop(70%, #000), color-stop(100%, #000))
-          background-image: -webkit-linear-gradient(left, #fff 0%, #fff 70%, #000 70%, #000 100%)
-          background-image:         linear-gradient(left, #fff 0%, #fff 70%, #000 70%, #000 100%)
+          background-image: -webkit-linear-gradient(left, #fff 0%, #fff 60%, #000 80%, #000 100%)
+          background-image:         linear-gradient(left, #fff 0%, #fff 60%, #000 80%, #000 100%)
           color: black
           text-align: left
         #micky
-          background-image:    -moz-linear-gradient(left, #fff 0%, #fff 30%, #000 30%, #000 100%)
-          background-image:     -ms-linear-gradient(left, #fff 0%, #fff 30%, #000 30%, #000 100%)
-          background-image:      -o-linear-gradient(left, #fff 0%, #fff 30%, #000 30%, #000 100%)
+          background-image:    -moz-linear-gradient(left, #fff 0%, #fff 20%, #000 40%, #000 100%)
+          background-image:     -ms-linear-gradient(left, #fff 0%, #fff 20%, #000 40%, #000 100%)
+          background-image:      -o-linear-gradient(left, #fff 0%, #fff 20%, #000 40%, #000 100%)
           background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(30%, #fff), color-stop(30%, #000), color-stop(100%, #000))
-          background-image: -webkit-linear-gradient(left, #fff 0%, #fff 30%, #000 30%, #000 100%)
-          background-image:         linear-gradient(left, #fff 0%, #fff 30%, #000 30%, #000 100%)
+          background-image: -webkit-linear-gradient(left, #fff 0%, #fff 20%, #000 40%, #000 100%)
+          background-image:         linear-gradient(left, #fff 0%, #fff 20%, #000 40%, #000 100%)
           color: white
           text-align: right
         #jedenascie
