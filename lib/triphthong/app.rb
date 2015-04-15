@@ -4,6 +4,8 @@ require 'haml'
 
 module Triphthong class App < Sinatra::Base
   enable :inline_templates
+  set :root, File.join(File.dirname(__FILE__), '..', '..')
+  set :public_folder, Proc.new { File.join root, 'public' }
 
   get '/' do
     @poet = 'index'
