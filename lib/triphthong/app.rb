@@ -164,7 +164,7 @@ __END__
   %p i odświeżaj aż padniesz
   %p &nbsp;
   %p
-    %a{ href: 'http://github.com/chastell/triphthong' } Triphthong
+    %a{ href: 'https://github.com/chastell/triphthong/tree/0.0' } Triphthong
     od
     %a{ href: 'http://chastell.net' } chastella
 
