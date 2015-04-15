@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'haml'
-
+require 'sass'
 
 module Triphthong class App < Sinatra::Base
   enable :inline_templates
@@ -30,7 +30,7 @@ module Triphthong class App < Sinatra::Base
     case whom
     when :julek
       structure = '5+6'
-      strophes  = 10
+      strophes  = 8
     when :micky
       structure = '7+6'
       strophes  = 8
@@ -66,7 +66,7 @@ __END__
     %style
       :sass
         *
-          font-size: 1em
+          font-size: 16px
           margin: 0 auto
           padding: 0
         a
@@ -76,15 +76,16 @@ __END__
           background: url(julek.png) bottom left no-repeat, url(micky.png) bottom right no-repeat
           height: 100%
         h1
-          font-size: 2em
           margin-bottom: 1em
-          width: 50%
+          a
+            font-size: 30px
         html
           height: 100%
         #index
           background-image:    -moz-linear-gradient(left, #fff 0%, #fff 50%, #000 50%, #000 100%)
           background-image:     -ms-linear-gradient(left, #fff 0%, #fff 50%, #000 50%, #000 100%)
           background-image:      -o-linear-gradient(left, #fff 0%, #fff 50%, #000 50%, #000 100%)
+          background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(50%, #fff), color-stop(50%, #000), color-stop(100%, #000))
           background-image: -webkit-linear-gradient(left, #fff 0%, #fff 50%, #000 50%, #000 100%)
           background-image:         linear-gradient(left, #fff 0%, #fff 50%, #000 50%, #000 100%)
           color: #888
@@ -93,6 +94,7 @@ __END__
           background-image:    -moz-linear-gradient(left, #fff 0%, #fff 60%, #000 60%, #000 100%)
           background-image:     -ms-linear-gradient(left, #fff 0%, #fff 60%, #000 60%, #000 100%)
           background-image:      -o-linear-gradient(left, #fff 0%, #fff 60%, #000 60%, #000 100%)
+          background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(60%, #fff), color-stop(60%, #000), color-stop(100%, #000))
           background-image: -webkit-linear-gradient(left, #fff 0%, #fff 60%, #000 60%, #000 100%)
           background-image:         linear-gradient(left, #fff 0%, #fff 60%, #000 60%, #000 100%)
           color: black
@@ -101,6 +103,7 @@ __END__
           background-image:    -moz-linear-gradient(left, #fff 0%, #fff 40%, #000 40%, #000 100%)
           background-image:     -ms-linear-gradient(left, #fff 0%, #fff 40%, #000 40%, #000 100%)
           background-image:      -o-linear-gradient(left, #fff 0%, #fff 40%, #000 40%, #000 100%)
+          background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(40%, #fff), color-stop(40%, #000), color-stop(100%, #000))
           background-image: -webkit-linear-gradient(left, #fff 0%, #fff 40%, #000 40%, #000 100%)
           background-image:         linear-gradient(left, #fff 0%, #fff 40%, #000 40%, #000 100%)
           color: white
@@ -113,9 +116,10 @@ __END__
           float: right
         #poem
           clear: both
-          cursor: help
           padding-top: 1em
-          width: 50%
+          p
+            cursor: help
+            margin: 0.5em
         #black
           color: black
           float: left
@@ -135,9 +139,9 @@ __END__
   %body
     %h1
       #jedenascie
-        %a{ href: '/julek' } jedenaście
+        %a{ href: '/julek' } jedenaście ←
       #trzynascie
-        %a{ href: '/micky' } trzynaście
+        %a{ href: '/micky' } → trzynaście
     = yield
 
 @@ index
@@ -153,8 +157,10 @@ __END__
     i
     %a{ href: 'http://pl.wikipedia.org/wiki/Adam_Mickiewicz' } Micky
     z Wikipedii
+  %p
+    źródła cytatów w dymkach
 #white
-  %p wybierz formę
+  %p ↖ wybierz formę ↗
   %p i odświeżaj aż padniesz
   %p &nbsp;
   %p
@@ -166,6 +172,6 @@ __END__
 #poem
   - @verses.each_slice 4 do |slice|
     - slice.each do |verse|
-      %div{ title: verse.source }&= verse.text
+      %p{ title: verse.source }&= verse.text
     %br
   %a{ href: '' } …ну, погоди…
