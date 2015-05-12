@@ -59,7 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   bogus (~> 0.1.4)
-  minitest (~> 5.0)
+  minitest (~> 5.6)
   reek (~> 2.0)
   rubocop (~> 0.31.0)
   triphthong!
