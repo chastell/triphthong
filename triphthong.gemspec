@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.email       = 'chastell@chastell.net'
 
   gem.files       = `git ls-files -z`.split("\0")
-  gem.executables = gem.files.grep(/^bin\//).map { |path| File.basename(path) }
-  gem.test_files  = gem.files.grep(/^test\/.*\.rb$/)
+  gem.executables = gem.files.grep(%r{^bin/}).map { |path| File.basename(path) }
+  gem.test_files  = gem.files.grep(%r{^test/.*\.rb$})
 
   gem.add_dependency 'private_attr', '~> 1.1'
   gem.add_dependency 'procto',       '~> 0.0.2'
