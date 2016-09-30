@@ -12,6 +12,8 @@ module Triphthong
       puts rhymer.call(lengths: settings.lengths, rhymes: settings.rhymes)
     end
 
-    private_attr_reader :rhymer, :settings
+    private
+
+    attr_reader :rhymer, :settings
   end
 end

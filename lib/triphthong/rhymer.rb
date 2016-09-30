@@ -17,9 +17,9 @@ module Triphthong
       end.join
     end
 
-    private_attr_reader :lengths, :rhymes, :verses
-
     private
+
+    attr_reader :lengths, :rhymes, :verses
 
     def rhyme_lengths
       structure.group_by(&:first).map do |symbol, structs|
