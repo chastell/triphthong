@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     triphthong (0.1.0)
-      private_attr (~> 1.1)
       procto (~> 0.0.2)
 
 GEM
@@ -28,7 +27,6 @@ GEM
     parser (2.3.1.4)
       ast (~> 2.2)
     powerpack (0.1.1)
-    private_attr (1.1.0)
     procto (0.0.3)
     rainbow (2.1.0)
     reek (4.4.2)
