@@ -1,6 +1,6 @@
 module Triphthong
   class Verses
-    def rhyme_map(_rhyme_lenghts)
+    def rhyme_map(rhyme_lenghts)
     end
 
     def verse(length:, rhyme:)
