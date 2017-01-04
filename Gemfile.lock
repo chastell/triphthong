@@ -28,7 +28,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     procto (0.0.3)
-    rainbow (2.1.0)
+    rainbow (2.2.1)
     reek (4.5.3)
       codeclimate-engine-rb (~> 0.4.0)
       parser (~> 2.3.1, >= 2.3.1.2)
@@ -59,4 +59,4 @@ DEPENDENCIES
   triphthong!
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
