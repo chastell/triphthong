@@ -20,6 +20,7 @@ Gem::Specification.new do |gem|
   end
 
   gem.add_dependency 'procto', '~> 0.0.2'
+  gem.add_dependency 'rake',   '~> 12.0'
 
   gem.add_development_dependency 'bogus',    '~> 0.1.4'
   gem.add_development_dependency 'minitest', '~> 5.6'
