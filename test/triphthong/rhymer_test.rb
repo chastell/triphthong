@@ -15,7 +15,7 @@ module Triphthong
         stub(verses).verse(length: 7, rhyme: 'sense') do
           'but sometimes they don’t make sense'
         end
-        poem = Rhymer.call(lengths: [5, 7, 5], rhymes: %w(A B C),
+        poem = Rhymer.call(lengths: [5, 7, 5], rhymes: %w[A B C],
                            verses: verses)
         _(poem).must_equal <<-end.dedent
           haikus are easy
