@@ -39,8 +39,8 @@ GEM
     procto (0.0.3)
     rainbow (2.2.2)
       rake
-    rake (12.1.0)
-    reek (4.7.2)
+    rake (12.2.1)
+    reek (4.7.3)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
       rainbow (~> 2.0)
@@ -72,4 +72,4 @@ DEPENDENCIES
   triphthong!
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
