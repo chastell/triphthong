@@ -27,7 +27,7 @@ GEM
     ffi (1.9.18)
     ice_nine (0.11.2)
     iniparse (1.4.4)
-    minitest (5.10.3)
+    minitest (5.11.1)
     overcommit (0.41.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
@@ -43,7 +43,7 @@ GEM
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
       rainbow (~> 2.0)
-    rubocop (0.52.0)
+    rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
       powerpack (~> 0.1)
@@ -71,4 +71,4 @@ DEPENDENCIES
   triphthong!
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
