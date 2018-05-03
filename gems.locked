@@ -28,7 +28,7 @@ GEM
     ice_nine (0.11.2)
     iniparse (1.4.4)
     minitest (5.11.3)
-    overcommit (0.44.0)
+    overcommit (0.45.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
     parallel (1.12.1)
@@ -63,7 +63,7 @@ PLATFORMS
 DEPENDENCIES
   bogus (~> 0.1.4)
   minitest (~> 5.6)
-  overcommit (~> 0.44.0)
+  overcommit (~> 0.45.0)
   reek (~> 4.0)
   rubocop (~> 0.54.0)
   triphthong!
