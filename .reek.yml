@@ -1,0 +1,6 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false
+  NestedIterators:
+    exclude:
+      - Triphthong::Settings#initialize

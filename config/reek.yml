@@ -1,6 +1,0 @@
-NestedIterators:
-  exclude:
-    - Triphthong::Settings#initialize
-
-IrresponsibleModule:
-  enabled: false
